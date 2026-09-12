@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Kast Nivaran Balaji Mandir Foundation">
+  <circle cx="128" cy="128" r="122" fill="#8A3B2A"/>
+  <circle cx="128" cy="128" r="116" fill="none" stroke="#C9A24A" stroke-width="4"/>
+  <path fill="#F3E6C8" d="M42 214c8-44 32-78 86-78s78 34 86 78c-26 18-56 26-86 26s-60-8-86-26z"/>
+  <path fill="#F3E6C8" d="M48 200c6-52 28-92 80-92s74 40 80 92"/>
+  <path fill="none" stroke="#C9A24A" stroke-width="3.2" d="M54 198c8-48 28-84 74-84s66 36 74 84"/>
+  <path fill="#1A120C" d="M86 196h84v8H86zM94 188h68l-6 8H100z"/>
+  <path fill="#1A120C" d="M102 120c0-28 10-52 26-70 16 18 26 42 26 70v68H102z"/>
+  <path fill="#C9A24A" d="M124 58l4-10 4 10c8 4 12 10 14 18h-36c2-8 6-14 14-18z"/>
+  <path fill="#1A120C" d="M122 42h12v18h-12z"/>
+  <ellipse cx="128" cy="34" rx="11" ry="16" fill="#F4B43A"/>
+  <ellipse cx="128" cy="30" rx="6" ry="9" fill="#FFF3C4"/>
+  <circle cx="128" cy="150" r="7" fill="#C9A24A"/>
+  <circle cx="128" cy="172" r="5" fill="#C9A24A"/>
+</svg>
