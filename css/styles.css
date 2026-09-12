@@ -439,6 +439,20 @@ section { padding: 72px 0; }
   font-size: 15px;
 }
 
+.bank {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 22px 24px;
+  margin: 8px 0 28px;
+}
+.bank .num {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 20px;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+
 .contact-panel {
   background: var(--white);
   border: 1px solid var(--line);
