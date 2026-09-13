@@ -582,11 +582,13 @@ label { font-size: 14px; font-weight: 600; }
 }
 input, textarea, select {
   font: inherit;
+  width: 100%;
   padding: 12px 14px;
   border: 1px solid var(--line);
   border-radius: 10px;
   background: #fff;
 }
+.form-row > div { min-width: 0; }
 textarea { min-height: 140px; resize: vertical; }
 
 /* Footer */
