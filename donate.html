@@ -43,7 +43,7 @@
       <div class="wrap">
         <p class="eyebrow">दान · Build the campus</p>
         <h1>Land, medicines and the next five homes.</h1>
-        <p>Gifts go to the Section 8 company current account. They cannot be taken out as profit. Use the form for a QR with your amount, or scan the static QR below. The payment message is <strong>web</strong>. Donations are subject to our <a href="terms.html">Terms and Conditions</a> and <a href="refund_policy.html">Refund Policy</a>.</p>
+        <p>Gifts go to the Section 8 company current account. They cannot be taken out as profit. Use the form for a QR with your amount — each gift gets a new remark <strong>web1</strong>, <strong>web2</strong>, <strong>web3</strong>… Donations are subject to our <a href="terms.html">Terms and Conditions</a> and <a href="refund_policy.html">Refund Policy</a>.</p>
         <p><a class="btn btn-gold" href="give.html">Open the donation form</a></p>
       </div>
     </div>
@@ -52,7 +52,7 @@
         <p class="note">12A and 80G approvals are <strong>provisional</strong> for assessment years 2026–27 to 2028–29 (URNs AALCK8805BE20251 and AALCK8805BF20261). Ask the office which year your gift will fall in before you claim a deduction.</p>
 
         <h2 id="give">Donate — enter your details</h2>
-        <p>Name, mobile, email and amount. A UPI QR is generated for that rupee value. The remark in the payment is already <b>web</b>. Your details stay in this browser until you email the office for a receipt.</p>
+        <p>Name, mobile, email and amount. A UPI QR is generated for that rupee value with a new remark (<b>web1</b>, <b>web2</b>, …). Your details stay in this browser until you email the office for a receipt.</p>
         <p id="give-error" class="form-error" hidden></p>
         <form id="give-form" class="give-panel" action="donate.html#give" method="get">
           <label for="name">Your name</label>
@@ -76,7 +76,7 @@
           <p id="give-amount" class="give-amount"></p>
           <div id="give-qr" class="give-qr"></div>
           <p id="give-summary"></p>
-          <p>Payee Kast Nivaran Balaji Mandir Foundation · UPI <span class="num">74076501@ubin</span> · remark <b>web</b>.</p>
+          <p>Payee Kast Nivaran Balaji Mandir Foundation · UPI <span class="num">74076501@ubin</span> · remark <b id="give-note">web…</b>. Do not change the remark in the app.</p>
           <div class="give-actions">
             <a class="btn btn-gold" id="give-upi" href="#">Open UPI app</a>
             <a class="btn btn-ghost" id="give-mail" href="mailto:support@kashtnivaranbalajimandirfoundation.org">Email office for 80G</a>
@@ -91,7 +91,7 @@
           <li>Then — vriddhashram, anathashram and the kennel</li>
         </ul>
         <h2>Foundation bank account</h2>
-        <p>Transfer only to this current account in the Foundation’s name. Do not send money to personal accounts. Scan the QR — the payment remark is already filled as <b>web</b>.</p>
+        <p>Transfer only to this current account in the Foundation’s name. Do not send money to personal accounts. This poster QR uses remark <b>web</b>. For numbered remarks (<b>web1</b>, <b>web2</b>…) use the form above.</p>
         <div class="bank" style="display:grid;grid-template-columns:220px 1fr;gap:22px;align-items:center">
           <img src="assets/upi-donate-qr.png" alt="UPI QR for Kast Nivaran Balaji Mandir Foundation, remark web" width="220" height="220" style="background:#fff;border-radius:12px;padding:8px">
           <dl class="stat-grid">

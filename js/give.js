@@ -1,8 +1,9 @@
 (function () {
   var VPA = "74076501@ubin";
   var PAYEE = "Kast Nivaran Balaji Mandir Foundation";
-  var NOTE = "web";
   var MAIL = "support@kashtnivaranbalajimandirfoundation.org";
+  var SEQ_KEY = "knbmf-web-n-v4";
+  var LOG_KEY = "knbmf-web-log-v4";
 
   var form = document.getElementById("give-form");
   var result = document.getElementById("give-result");
@@ -20,7 +21,35 @@
     return Number(n).toLocaleString("en-IN");
   }
 
-  function upiUri(amount) {
+  function nextWebNote() {
+    var n = 0;
+    try {
+      n = parseInt(localStorage.getItem(SEQ_KEY) || "0", 10) || 0;
+    } catch (e) {
+      n = 0;
+    }
+    if (n < 1) {
+      var buf = new Uint16Array(1);
+      if (window.crypto && crypto.getRandomValues) crypto.getRandomValues(buf);
+      else buf[0] = Math.floor(Math.random() * 65000);
+      n = 1000 + (buf[0] % 8000);
+    }
+    n += 1;
+    try {
+      localStorage.setItem(SEQ_KEY, String(n));
+    } catch (e) {}
+    return "web" + n;
+  }
+
+  function remember(entry) {
+    try {
+      var log = JSON.parse(localStorage.getItem(LOG_KEY) || "[]");
+      log.push(entry);
+      localStorage.setItem(LOG_KEY, JSON.stringify(log.slice(-200)));
+    } catch (e) {}
+  }
+
+  function upiUri(amount, note) {
     return (
       "upi://pay?pa=" +
       encodeURIComponent(VPA).replace("%40", "@") +
@@ -29,7 +58,9 @@
       "&am=" +
       String(amount) +
       "&cu=INR&tn=" +
-      encodeURIComponent(NOTE)
+      encodeURIComponent(note) +
+      "&tr=" +
+      encodeURIComponent(note)
     );
   }
 
@@ -54,7 +85,8 @@
     }
     showError("");
 
-    var uri = upiUri(amount);
+    var note = nextWebNote();
+    var uri = upiUri(amount, note);
     qrBox.innerHTML = "";
     new QRCode(qrBox, {
       text: uri,
@@ -66,6 +98,8 @@
     });
 
     document.getElementById("give-amount").textContent = "₹" + rupees(amount);
+    var noteEl = document.getElementById("give-note");
+    if (noteEl) noteEl.textContent = note;
     document.getElementById("give-summary").innerHTML =
       "<b>" +
       name.replace(/</g, "") +
@@ -74,9 +108,18 @@
       "<br>" +
       email.replace(/</g, "") +
       "<br>Remark <b>" +
-      NOTE +
+      note +
       "</b> · UPI " +
       VPA;
+
+    remember({
+      note: note,
+      name: name,
+      phone: phone,
+      email: email,
+      amount: amount,
+      at: new Date().toISOString(),
+    });
 
     var upiBtn = document.getElementById("give-upi");
     if (upiBtn) upiBtn.setAttribute("href", uri);
@@ -89,7 +132,7 @@
       "Email: " + email,
       "Amount: INR " + amount,
       "UPI ID: " + VPA,
-      "Remark: " + NOTE,
+      "Remark: " + note,
       "",
       "UTR / UPI reference:",
       "PAN (if 80G receipt needed):",
@@ -101,7 +144,7 @@
         "mailto:" +
           MAIL +
           "?subject=" +
-          encodeURIComponent("Donation ₹" + amount + " · " + name) +
+          encodeURIComponent("Donation " + note + " · ₹" + amount + " · " + name) +
           "&body=" +
           encodeURIComponent(q)
       );
