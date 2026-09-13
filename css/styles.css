@@ -218,6 +218,10 @@ h3 { font-size: 26px; margin-bottom: 8px; }
   padding: 12px 22px;
   font-weight: 600;
   font-size: 15px;
+  font-family: inherit;
+  cursor: pointer;
+  background: none;
+  color: inherit;
   border: 1px solid transparent;
 }
 
@@ -531,6 +535,51 @@ form {
   max-width: 520px;
 }
 label { font-size: 14px; font-weight: 600; }
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+@media (max-width: 640px) {
+  .form-row { grid-template-columns: 1fr; }
+}
+.form-error {
+  background: #fdeeee;
+  border: 1px solid #e8b4b0;
+  color: #6e2e26;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 15px;
+}
+.give-panel {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 22px 24px;
+  margin: 8px 0 32px;
+  max-width: 560px;
+}
+.give-result { max-width: 560px; }
+.give-qr {
+  width: 236px;
+  height: 236px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 8px;
+  margin: 8px 0 12px;
+}
+.give-qr img, .give-qr canvas { width: 220px; height: 220px; display: block; }
+.give-amount {
+  font-family: var(--serif);
+  font-size: 32px;
+  margin: 0 0 8px;
+}
+.give-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
 input, textarea, select {
   font: inherit;
   padding: 12px 14px;

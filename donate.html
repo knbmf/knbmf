@@ -38,12 +38,46 @@
       <div class="wrap">
         <p class="eyebrow">दान · Build the campus</p>
         <h1>Land, medicines and the next five homes.</h1>
-        <p>Gifts go to the Section 8 company current account. They cannot be taken out as profit. Scan the UPI QR (the payment message is already <strong>web</strong>), or transfer to the account below. Donations are subject to our <a href="terms.html">Terms and Conditions</a> and <a href="refund_policy.html">Refund Policy</a>.</p>
+        <p>Gifts go to the Section 8 company current account. They cannot be taken out as profit. Enter your details for a QR with your amount, or scan the static QR below. The payment message is <strong>web</strong>. Donations are subject to our <a href="terms.html">Terms and Conditions</a> and <a href="refund_policy.html">Refund Policy</a>.</p>
       </div>
     </div>
     <section>
       <div class="wrap prose">
         <p class="note">12A and 80G approvals are <strong>provisional</strong> for assessment years 2026–27 to 2028–29 (URNs AALCK8805BE20251 and AALCK8805BF20261). Ask the office which year your gift will fall in before you claim a deduction.</p>
+
+        <h2 id="give">Donate — enter your details</h2>
+        <p>Name, mobile, email and amount. A UPI QR is generated for that rupee value. The remark in the payment is already <b>web</b>. Your details stay in this browser until you email the office for a receipt.</p>
+        <p id="give-error" class="form-error" hidden></p>
+        <form id="give-form" class="give-panel" action="donate.html#give" method="get">
+          <label for="name">Your name</label>
+          <input id="name" name="name" required maxlength="120" autocomplete="name">
+          <div class="form-row">
+            <div>
+              <label for="phone">Mobile number</label>
+              <input id="phone" name="phone" required inputmode="numeric" maxlength="10" pattern="[6-9][0-9]{9}" placeholder="10-digit" autocomplete="tel">
+            </div>
+            <div>
+              <label for="email">Email for receipt</label>
+              <input id="email" name="email" type="email" required autocomplete="email">
+            </div>
+          </div>
+          <label for="amount">Amount (₹)</label>
+          <input id="amount" name="amount" required inputmode="numeric" min="1" max="500000" placeholder="e.g. 501">
+          <button class="btn btn-gold" type="submit">Generate QR</button>
+        </form>
+        <div id="give-result" class="give-result give-panel" hidden>
+          <p class="meta">Scan with PhonePe, Google Pay or any UPI app. Do not change the amount.</p>
+          <p id="give-amount" class="give-amount"></p>
+          <div id="give-qr" class="give-qr"></div>
+          <p id="give-summary"></p>
+          <p>Payee Kast Nivaran Balaji Mandir Foundation · UPI <span class="num">74076501@ubin</span> · remark <b>web</b>.</p>
+          <div class="give-actions">
+            <a class="btn btn-gold" id="give-upi" href="#">Open UPI app</a>
+            <a class="btn btn-ghost" id="give-mail" href="mailto:support@kashtnivaranbalajimandirfoundation.org">Email office for 80G</a>
+            <button class="btn" type="button" id="give-again">New donation</button>
+          </div>
+        </div>
+
         <h2>Where money goes</h2>
         <ul>
           <li>Tuesday clinic — medicines, consumables, rent</li>
@@ -90,6 +124,8 @@
     </div>
   </footer>
   <script src="js/site.js"></script>
+  <script src="js/qrcode.min.js"></script>
+  <script src="js/give.js"></script>
   <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
 </body>
 </html>
