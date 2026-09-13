@@ -23,4 +23,8 @@
       a.setAttribute("aria-current", "page");
     }
   });
+
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js").catch(function () {});
+  }
 })();

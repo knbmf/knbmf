@@ -1,2 +1,8 @@
 .DS_Store
 docs/
+dist/
+amplify-deploy.zip
+donate-app/data/
+donate-app/.venv/
+donate-app/.env
+
