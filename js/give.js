@@ -2,8 +2,7 @@
   var VPA = "knbmfoundatio@ybl";
   var PAYEE = "Kast Nivaran Balaji Mandir Foundation";
   var MAIL = "support@kashtnivaranbalajimandirfoundation.org";
-  var SEQ_KEY = "knbmf-note-n-v5";
-  var LOG_KEY = "knbmf-web-log-v5";
+  var LOG_KEY = "knbmf-web-log-v6";
 
   var form = document.getElementById("give-form");
   var result = document.getElementById("give-result");
@@ -21,20 +20,6 @@
     return Number(n).toLocaleString("en-IN");
   }
 
-  function nextWebNote() {
-    var n = 0;
-    try {
-      n = parseInt(localStorage.getItem(SEQ_KEY) || "0", 10) || 0;
-    } catch (e) {
-      n = 0;
-    }
-    n += 1;
-    try {
-      localStorage.setItem(SEQ_KEY, String(n));
-    } catch (e) {}
-    return "knbmf" + n;
-  }
-
   function remember(entry) {
     try {
       var log = JSON.parse(localStorage.getItem(LOG_KEY) || "[]");
@@ -43,9 +28,8 @@
     } catch (e) {}
   }
 
-  function upiUri(amount, note) {
-    // P2P payee. Do not send tr/mc — those are merchant fields.
-    // Spaces in tr are declined by NPCI and often shown as "UPI risk policy".
+  function upiUri(amount) {
+    // No tn/tr/mc. Remarks trigger PhonePe/GPay "UPI risk policy" on this VPA.
     return (
       "upi://pay?pa=" +
       VPA +
@@ -53,8 +37,7 @@
       encodeURIComponent(PAYEE) +
       "&am=" +
       String(amount) +
-      "&cu=INR&tn=" +
-      encodeURIComponent(note)
+      "&cu=INR"
     );
   }
 
@@ -89,8 +72,7 @@
     }
     showError("");
 
-    var note = nextWebNote();
-    var uri = upiUri(amount, note);
+    var uri = upiUri(amount);
     qrBox.innerHTML = "";
     new QRCode(qrBox, {
       text: uri,
@@ -102,22 +84,10 @@
     });
 
     document.getElementById("give-amount").textContent = "₹" + rupees(amount);
-    var noteEl = document.getElementById("give-note");
-    if (noteEl) noteEl.textContent = note;
-    document.getElementById("give-summary").innerHTML =
-      "<b>" +
-      name.replace(/</g, "") +
-      "</b><br>" +
-      phone +
-      "<br>" +
-      email.replace(/</g, "") +
-      "<br>टिप्पणी <b>" +
-      note +
-      "</b> · UPI " +
-      VPA;
+    var summary = document.getElementById("give-summary");
+    if (summary) summary.hidden = true;
 
     remember({
-      note: note,
       name: name,
       phone: phone,
       email: email,
@@ -152,7 +122,6 @@
       "Email: " + email,
       "Amount: INR " + amount,
       "UPI ID: " + VPA,
-      "Remark: " + note,
       "",
       "UTR / UPI reference:",
       "PAN (if 80G receipt needed):",
@@ -164,7 +133,7 @@
         "mailto:" +
           MAIL +
           "?subject=" +
-          encodeURIComponent("Donation " + note + " · ₹" + amount + " · " + name) +
+          encodeURIComponent("Donation · ₹" + amount + " · " + name) +
           "&body=" +
           encodeURIComponent(q)
       );
