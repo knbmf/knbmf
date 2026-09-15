@@ -72,6 +72,16 @@
     return "";
   }
 
+  document.querySelectorAll(".amount-chip").forEach(function (chip) {
+    chip.addEventListener("click", function () {
+      form.amount.value = chip.getAttribute("data-amount") || "";
+      document.querySelectorAll(".amount-chip").forEach(function (c) {
+        c.classList.toggle("on", c === chip);
+      });
+      form.amount.focus();
+    });
+  });
+
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     var name = (form.name.value || "").trim().replace(/\s+/g, " ");

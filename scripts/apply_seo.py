@@ -13,13 +13,13 @@ PAGES = {
     "index.html": {
         "url": f"{BASE}/",
         "title": "कष्ट निवारण बालाजी मंदिर फाउंडेशन | काशीपुर धारा 8 संस्था",
-        "desc": "काशीपुर की धारा 8 संस्था। धन्वंतरी क्लिनिक मंगलवार निःशुल्क। आगे चैरिटेबल अस्पताल, विद्यालय, गौशाला, वृद्धाश्रम, अनाथाश्रम। CIN U88900UT2025NPL019252, अस्थायी 12A और 80G।",
+        "desc": "काशीपुर की धारा 8 संस्था। धन्वंतरी क्लिनिक मंगलवार निःशुल्क। आगे बालाजी मंदिर निर्माण, चैरिटेबल अस्पताल, विद्यालय, गौशाला, वृद्धाश्रम, अनाथाश्रम। CIN U88900UT2025NPL019252, अस्थायी 12A और 80G।",
         "type": "website",
     },
     "about.html": {
         "url": f"{BASE}/about.html",
         "title": "परिचय | कष्ट निवारण बालाजी मंदिर फाउंडेशन काशीपुर",
-        "desc": "20 मई 2025 को निगमित धारा 8 कंपनी। काशीपुर में क्लिनिक, चैरिटेबल अस्पताल, विद्यालय, गौशाला और आश्रम का परिसर। लाभ नहीं, अधिशेष सेवा में रहता है।",
+        "desc": "20 मई 2025 को निगमित धारा 8 कंपनी। काशीपुर में क्लिनिक, बालाजी मंदिर निर्माण, चैरिटेबल अस्पताल, विद्यालय, गौशाला और आश्रम का परिसर। लाभ नहीं, अधिशेष सेवा में रहता है।",
     },
     "clinic.html": {
         "url": f"{BASE}/clinic.html",
@@ -28,23 +28,25 @@ PAGES = {
     },
     "projects.html": {
         "url": f"{BASE}/projects.html",
-        "title": "परियोजनाएँ | अस्पताल, विद्यालय, गौशाला, आश्रम",
-        "desc": "कष्ट निवारण बालाजी मंदिर फाउंडेशन का परिसर: चैरिटेबल अस्पताल, विद्या मंदिर, गौशाला, वृद्धाश्रम, अनाथाश्रम, पशु सेवा केनेल और धन्वंतरी क्लिनिक।",
+        "title": "परियोजनाएँ | मंदिर निर्माण, अस्पताल, विद्यालय, गौशाला",
+        "desc": "कष्ट निवारण बालाजी मंदिर फाउंडेशन का परिसर: बालाजी मंदिर निर्माण, चैरिटेबल अस्पताल, विद्या मंदिर, गौशाला, वृद्धाश्रम, अनाथाश्रम, पशु सेवा केनेल और धन्वंतरी क्लिनिक।",
     },
     "work.html": {
         "url": f"{BASE}/work.html",
         "title": "हमारा कार्य | सेवा काशीपुर उत्तराखंड",
-        "desc": "अभी मंगलवार चैरिटेबल क्लिनिक। आगे चैरिटेबल अस्पताल, शिक्षा, गौ सेवा, वृद्ध, बच्चे और आवारा पशुओं की सेवा काशीपुर में।",
+        "desc": "अभी मंगलवार चैरिटेबल क्लिनिक। आगे बालाजी मंदिर निर्माण, चैरिटेबल अस्पताल, शिक्षा, गौ सेवा, वृद्ध, बच्चे और आवारा पशुओं की सेवा काशीपुर में।",
     },
     "donate.html": {
         "url": f"{BASE}/donate.html",
         "title": "दान करें | कष्ट निवारण बालाजी मंदिर फाउंडेशन UPI",
         "desc": "UPI knbmfoundatio@ybl पर दान करें। प्राप्तकर्ता Kast Nivaran Balaji Mandir Foundation। अस्थायी 12A और 80G। टिप्पणी web1, web2…",
+        "image": f"{BASE}/assets/og-donate.jpg",
     },
     "give.html": {
         "url": f"{BASE}/give.html",
         "title": "दान फ़ॉर्म | UPI क्यूआर बनाएँ | KNBMF काशीपुर",
         "desc": "नाम, मोबाइल, ईमेल और राशि लिखें। UPI क्यूआर knbmfoundatio@ybl पर बनेगा। टिप्पणी Kast Nivaran Balaji Mandir Foundation web1।",
+        "image": f"{BASE}/assets/og-donate.jpg",
     },
     "transparency.html": {
         "url": f"{BASE}/transparency.html",
@@ -65,13 +67,15 @@ PAGES = {
         "url": f"{BASE}/share.html",
         "title": "साझा करें | KNBMF दान अभियान WhatsApp Facebook",
         "desc": "कष्ट निवारण बालाजी मंदिर फाउंडेशन का दान लिंक WhatsApp, Facebook, Telegram पर भेजें। तैयार संदेश, 80G, UPI knbmfoundatio@ybl, काशीपुर।",
+        "image": f"{BASE}/assets/og-donate.jpg",
     },
     "en.html": {
         "url": f"{BASE}/en.html",
         "title": "Donate | Kast Nivaran Balaji Mandir Foundation Kashipur",
-        "desc": "Section 8 NGO in Kashipur, Uttarakhand. Donate via UPI knbmfoundatio@ybl. Tuesday free clinic. School, gaushala, old-age home. Provisional 80G. CIN U88900UT2025NPL019252.",
+        "desc": "Section 8 NGO in Kashipur, Uttarakhand. Donate via UPI knbmfoundatio@ybl. Tuesday free clinic. Projected Balaji temple, hospital, school, gaushala. Provisional 80G. CIN U88900UT2025NPL019252.",
         "type": "website",
         "lang": "en",
+        "image": f"{BASE}/assets/og-donate.jpg",
     },
     "policies.html": {
         "url": f"{BASE}/policies.html",
@@ -116,7 +120,7 @@ ORG_LD = {
     "@type": ["NGO", "Organization"],
     "name": ORG,
     "alternateName": ["KNBMF", "कष्ट निवारण बालाजी मंदिर फाउंडेशन"],
-    "description": "Section 8 company in Kashipur, Uttarakhand. Tuesday free Dhanvantari clinic; campus for charitable hospital, school, gaushala, old-age home, orphanage and animal kennel. Donate via UPI knbmfoundatio@ybl.",
+    "description": "Section 8 company in Kashipur, Uttarakhand. Tuesday free Dhanvantari clinic; campus for Balaji temple construction, charitable hospital, school, gaushala, old-age home, orphanage and animal kennel. Donate via UPI knbmfoundatio@ybl.",
     "url": f"{BASE}/",
     "logo": f"{BASE}/assets/logo-mark.png",
     "image": OG,
@@ -142,7 +146,15 @@ ORG_LD = {
     "knowsLanguage": ["hi", "en"],
     "sameAs": [
         "https://tracxn.com/d/legal-entities/india/kast-nivaran-balaji-mandir-foundation/__uyyPYoMxJanZg9SUTpMeiMKDIe_KmysbJtlcML2sFQM",
+        "https://wa.me/917668397233",
     ],
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "support@kashtnivaranbalajimandirfoundation.org",
+        "url": "https://wa.me/917668397233",
+        "availableLanguage": ["hi", "en"],
+    },
     "potentialAction": {
         "@type": "DonateAction",
         "name": "Donate to Kast Nivaran Balaji Mandir Foundation",
@@ -165,7 +177,7 @@ FAQ_ITEMS = [
     ),
     (
         "धन कहाँ लगेगा?",
-        "पहले धन्वंतरी चैरिटेबल क्लिनिक की दवा और सामग्री। आगे विद्यालय और गौशाला के लिए भूमि। फिर वृद्धाश्रम, अनाथाश्रम और पशु सेवा केनेल।",
+        "पहले धन्वंतरी चैरिटेबल क्लिनिक की दवा और सामग्री। आगे बालाजी मंदिर निर्माण, चैरिटेबल अस्पताल, विद्यालय और गौशाला के लिए भूमि। फिर वृद्धाश्रम, अनाथाश्रम और पशु सेवा केनेल।",
     ),
     (
         "निःशुल्क क्लिनिक कब और कहाँ खुलता है?",
@@ -179,6 +191,7 @@ def seo_block(page: str, meta: dict) -> str:
     title = meta["title"]
     desc = meta["desc"]
     og_type = meta.get("type", "article")
+    og_image = meta.get("image", OG)
     robots = meta.get("robots", "index, follow")
     is_en = meta.get("lang") == "en"
     in_lang = "en-IN" if is_en else "hi-IN"
@@ -267,13 +280,13 @@ def seo_block(page: str, meta: dict) -> str:
   <meta property="og:description" content="{desc}">
   <meta property="og:type" content="{og_type}">
   <meta property="og:url" content="{url}">
-  <meta property="og:image" content="{OG}">
+  <meta property="og:image" content="{og_image}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{title}">
   <meta name="twitter:description" content="{desc}">
-  <meta name="twitter:image" content="{OG}">
+  <meta name="twitter:image" content="{og_image}">
   <script type="application/ld+json">{ld_json}</script>
 """
 
@@ -351,8 +364,13 @@ def write_sitemap() -> None:
         lines.append(f"    <priority>{p}</priority>")
         if name == "index.html":
             lines.append(f'    <image:image><image:loc>{OG}</image:loc></image:image>')
+        if name in ("give.html", "donate.html", "share.html"):
+            lines.append(
+                f'    <image:image><image:loc>{BASE}/assets/og-donate.jpg</image:loc></image:image>'
+            )
         if name == "projects.html":
             for img in (
+                "mandir-1.jpg",
                 "gaushala-1.jpg",
                 "school-1.jpg",
                 "hospital-1.jpg",

@@ -25,6 +25,7 @@
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image><image:loc>https://kashtnivaranbalajimandirfoundation.org/assets/campus/mandir-1.jpg</image:loc></image:image>
     <image:image><image:loc>https://kashtnivaranbalajimandirfoundation.org/assets/campus/gaushala-1.jpg</image:loc></image:image>
     <image:image><image:loc>https://kashtnivaranbalajimandirfoundation.org/assets/campus/school-1.jpg</image:loc></image:image>
     <image:image><image:loc>https://kashtnivaranbalajimandirfoundation.org/assets/campus/hospital-1.jpg</image:loc></image:image>
@@ -42,12 +43,14 @@
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image><image:loc>https://kashtnivaranbalajimandirfoundation.org/assets/og-donate.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://kashtnivaranbalajimandirfoundation.org/give.html</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image><image:loc>https://kashtnivaranbalajimandirfoundation.org/assets/og-donate.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://kashtnivaranbalajimandirfoundation.org/transparency.html</loc>
@@ -72,6 +75,7 @@
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image><image:loc>https://kashtnivaranbalajimandirfoundation.org/assets/og-donate.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://kashtnivaranbalajimandirfoundation.org/en.html</loc>

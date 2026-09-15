@@ -3,3 +3,4 @@ Allow: /
 Disallow: /404.html
 
 Sitemap: https://kashtnivaranbalajimandirfoundation.org/sitemap.xml
+# AI assistants: see /llms.txt for a plain-language summary of the Foundation.
