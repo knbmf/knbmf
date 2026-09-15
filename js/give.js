@@ -4,6 +4,11 @@
   var MAIL = "support@kashtnivaranbalajimandirfoundation.org";
   var LOG_KEY = "knbmf-web-log-v6";
 
+  ["give-summary", "give-risk", "give-note"].forEach(function (id) {
+    var n = document.getElementById(id);
+    if (n) n.remove();
+  });
+
   var form = document.getElementById("give-form");
   var result = document.getElementById("give-result");
   var qrBox = document.getElementById("give-qr");
@@ -29,7 +34,7 @@
   }
 
   function upiUri(amount) {
-    // No tn/tr/mc. Remarks trigger PhonePe/GPay "UPI risk policy" on this VPA.
+    // Payee, amount and INR only. No remark field.
     return (
       "upi://pay?pa=" +
       VPA +
@@ -84,8 +89,6 @@
     });
 
     document.getElementById("give-amount").textContent = "₹" + rupees(amount);
-    var summary = document.getElementById("give-summary");
-    if (summary) summary.hidden = true;
 
     remember({
       name: name,

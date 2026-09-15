@@ -45,7 +45,7 @@ PAGES = {
     "give.html": {
         "url": f"{BASE}/give.html",
         "title": "दान फ़ॉर्म | UPI क्यूआर बनाएँ | KNBMF काशीपुर",
-        "desc": "नाम, मोबाइल, ईमेल और राशि लिखें। UPI क्यूआर knbmfoundatio@ybl पर बनेगा। बिना टिप्पणी।",
+        "desc": "नाम, मोबाइल, ईमेल और राशि लिखें। UPI क्यूआर knbmfoundatio@ybl पर बनेगा।",
         "image": f"{BASE}/assets/og-donate.jpg",
     },
     "transparency.html": {
@@ -165,11 +165,11 @@ ORG_LD = {
 FAQ_ITEMS = [
     (
         "काशीपुर में इस संस्था को दान कैसे करें?",
-        "give.html पर नाम, मोबाइल, ईमेल और राशि लिखें। PhonePe या Google Pay से स्कैन करने योग्य UPI क्यूआर बनता है। UPI आईडी knbmfoundatio@ybl, प्राप्तकर्ता Kast Nivaran Balaji Mandir Foundation।",
+        "give.html पर नाम, मोबाइल, ईमेल और राशि लिखें। PhonePe या Google Pay से स्कैन करें। UPI आईडी knbmfoundatio@ybl।",
     ),
     (
         "UPI आईडी क्या है? व्यक्तिगत खाता तो नहीं?",
-        "संस्था की UPI आईडी knbmfoundatio@ybl है। प्राप्तकर्ता का नाम संस्था का कानूनी नाम है। CIN U88900UT2025NPL019252, PAN AALCK8805B।",
+        "दान आईडी knbmfoundatio@ybl है। CIN U88900UT2025NPL019252, PAN AALCK8805B।",
     ),
     (
         "80G की रसीद मिलेगी क्या?",

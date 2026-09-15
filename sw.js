@@ -1,5 +1,5 @@
 /* KNBMF web app — cache the public pages for install/offline. */
-var CACHE = "knbmf-v10";
+var CACHE = "knbmf-v11";
 var PRECACHE = [
   "/",
   "/index.html",
@@ -41,21 +41,20 @@ self.addEventListener("fetch", function (event) {
   var url = new URL(event.request.url);
   if (url.origin !== location.origin) return;
   event.respondWith(
-    caches.match(event.request).then(function (cached) {
-      var net = fetch(event.request)
-        .then(function (res) {
-          if (res && res.ok) {
-            var copy = res.clone();
-            caches.open(CACHE).then(function (cache) {
-              cache.put(event.request, copy);
-            });
-          }
-          return res;
-        })
-        .catch(function () {
+    fetch(event.request)
+      .then(function (res) {
+        if (res && res.ok) {
+          var copy = res.clone();
+          caches.open(CACHE).then(function (cache) {
+            cache.put(event.request, copy);
+          });
+        }
+        return res;
+      })
+      .catch(function () {
+        return caches.match(event.request).then(function (cached) {
           return cached || caches.match("/index.html");
         });
-      return cached || net;
-    })
+      })
   );
 });
