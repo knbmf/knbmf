@@ -1,6 +1,5 @@
 (function () {
   var VPA = "74076501@ubin";
-  var PAYEE = "Kast Nivaran Balaji Mandir Foundation";
   var MAIL = "support@kashtnivaranbalajimandirfoundation.org";
   var LOG_KEY = "knbmf-web-log-v6";
 
@@ -34,16 +33,21 @@
   }
 
   function upiUri(amount) {
-    // Payee, amount and INR only. No remark field.
-    return (
-      "upi://pay?pa=" +
-      VPA +
-      "&pn=" +
-      encodeURIComponent(PAYEE) +
-      "&am=" +
-      String(amount) +
-      "&cu=INR"
-    );
+    var uri = "upi://pay?pa=" + VPA + "&cu=INR";
+    if (amount) uri += "&am=" + String(amount);
+    return uri;
+  }
+
+  function openUpiApp(uri) {
+    var rest = uri.replace(/^upi:\/\//, "");
+    if (/android/i.test(navigator.userAgent || "")) {
+      window.location.href =
+        "intent://" +
+        rest +
+        "#Intent;scheme=upi;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;end";
+      return;
+    }
+    window.location.href = uri;
   }
 
   function validate(name, phone, email, amount) {
@@ -99,7 +103,14 @@
     });
 
     var upiBtn = document.getElementById("give-upi");
-    if (upiBtn) upiBtn.setAttribute("href", uri);
+    if (upiBtn) {
+      var openUri = upiUri("");
+      upiBtn.setAttribute("href", openUri);
+      upiBtn.onclick = function (ev) {
+        ev.preventDefault();
+        openUpiApp(openUri);
+      };
+    }
     var copyVpa = document.getElementById("give-copy-vpa");
     if (copyVpa) {
       copyVpa.onclick = function () {
