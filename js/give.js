@@ -50,16 +50,16 @@
   }
 
   function upiUri(amount, note) {
+    // P2P payee. Do not send tr/mc — those are merchant fields.
+    // Spaces in tr are declined by NPCI and often shown as "UPI risk policy".
     return (
       "upi://pay?pa=" +
-      encodeURIComponent(VPA).replace("%40", "@") +
+      VPA +
       "&pn=" +
       encodeURIComponent(PAYEE) +
       "&am=" +
       String(amount) +
       "&cu=INR&tn=" +
-      encodeURIComponent(note) +
-      "&tr=" +
       encodeURIComponent(note)
     );
   }
@@ -133,6 +133,22 @@
 
     var upiBtn = document.getElementById("give-upi");
     if (upiBtn) upiBtn.setAttribute("href", uri);
+    var copyVpa = document.getElementById("give-copy-vpa");
+    if (copyVpa) {
+      copyVpa.onclick = function () {
+        var text = VPA;
+        function done() {
+          var old = copyVpa.textContent;
+          copyVpa.textContent = "कॉपी हो गया";
+          setTimeout(function () {
+            copyVpa.textContent = old;
+          }, 1600);
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done).catch(function () {});
+        }
+      };
+    }
 
     var q = [
       "Donation from website",

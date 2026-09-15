@@ -100,13 +100,15 @@
           <button class="btn btn-gold" type="submit">क्यूआर बनाएँ</button>
         </form>
         <div id="give-result" class="give-result give-panel" hidden>
-          <p class="meta">PhonePe, Google Pay या किसी भी UPI ऐप से स्कैन करें। राशि न बदलें।</p>
+          <p class="meta">सबसे सुरक्षित तरीका: PhonePe या Google Pay खोलें → <strong>स्कैन</strong> → यही क्यूआर। वेबसाइट से «UPI ऐप खोलें» कई ऐप UPI risk policy से रोक देते हैं।</p>
           <p id="give-amount" class="give-amount"></p>
           <div id="give-qr" class="give-qr"></div>
           <p id="give-summary"></p>
-          <p>प्राप्तकर्ता Kast Nivaran Balaji Mandir Foundation · UPI <span class="num">knbmfoundatio@ybl</span> · टिप्पणी <b id="give-note">web…</b>। ऐप में टिप्पणी न बदलें।</p>
+          <p>UPI <span class="num">knbmfoundatio@ybl</span> · टिप्पणी <b id="give-note">web…</b>। ऐप में टिप्पणी न बदलें। ऐप बैंक/KYC वाला नाम दिखाता है, क्यूआर वाला नहीं।</p>
+          <p id="give-risk" class="note">ऐप ने UPI risk policy लिखा? यह वेबसाइट भुगतान नहीं रोकती — PhonePe/GPay वेबसाइट से खुले लिंक को संदिग्ध मानते हैं। ऐप बंद करें, ऐप के अंदर Scan &amp; Pay से क्यूआर स्कैन करें, या UPI आईडी खुद लिखें। उसी PhonePe खाते से खुद को पैसे न भेजें।</p>
           <div class="give-actions">
-            <a class="btn btn-gold" id="give-upi" href="#">UPI ऐप खोलें</a>
+            <button class="btn btn-gold" type="button" id="give-copy-vpa">UPI आईडी कॉपी करें</button>
+            <a class="btn btn-ghost" id="give-upi" href="#">UPI ऐप खोलें</a>
             <a class="btn btn-ghost" id="give-mail" href="mailto:support@kashtnivaranbalajimandirfoundation.org">80G के लिए ईमेल</a>
             <button class="btn" type="button" id="give-again">नया दान</button>
           </div>
@@ -119,7 +121,7 @@
           <li>फिर — वृद्धाश्रम, अनाथाश्रम और केनेल</li>
         </ul>
         <h2>UPI से भुगतान</h2>
-        <p>स्कैन करने पर धन संस्था के UPI <strong>knbmfoundatio@ybl</strong> पर जाता है। प्राप्तकर्ता <strong>Kast Nivaran Balaji Mandir Foundation</strong> दिखना चाहिए। किसी और आईडी या व्यक्तिगत नंबर पर धन न भेजें। इस क्यूआर की टिप्पणी <b>web</b> है। क्रमांकित टिप्पणी के लिए ऊपर का फ़ॉर्म भरें।</p>
+        <p>यह क्यूआर स्कैन करें या UPI आईडी पर भुगतान करें। किसी और आईडी पर धन न भेजें। इस क्यूआर की टिप्पणी <b>web</b> है। क्रमांकित टिप्पणी के लिए ऊपर का फ़ॉर्म भरें।</p>
         <div class="bank" style="display:grid;grid-template-columns:220px 1fr;gap:22px;align-items:center">
           <img src="assets/upi-donate-qr.png" alt="UPI QR knbmfoundatio@ybl for Kast Nivaran Balaji Mandir Foundation" width="220" height="220" style="background:#fff;border-radius:12px;padding:8px">
           <dl class="stat-grid">
@@ -127,19 +129,6 @@
             <div class="stat"><dt>प्राप्तकर्ता</dt><dd>Kast Nivaran Balaji Mandir Foundation</dd></div>
             <div class="stat"><dt>टिप्पणी</dt><dd>web</dd></div>
             <div class="stat"><dt>PAN</dt><dd>AALCK8805B</dd></div>
-          </dl>
-        </div>
-        <h2>संस्था का बैंक खाता</h2>
-        <p>UPI क्रेडिट उसी चालू खाते में बैठता है। स्कैन न चले तो बैंक विवरण से NEFT / IMPS करें।</p>
-        <div class="bank" style="display:grid;grid-template-columns:220px 1fr;gap:22px;align-items:center">
-          <img src="assets/upi-account-qr.png" alt="Union Bank UPI QR for Kast Nivaran Balaji Mandir Foundation current account" width="220" height="220" style="background:#fff;border-radius:12px;padding:8px">
-          <dl class="stat-grid">
-            <div class="stat"><dt>खाता नाम</dt><dd>Kast Nivaran Balaji Mandir Foundation</dd></div>
-            <div class="stat"><dt>बैंक</dt><dd>Union Bank of India, Kashipur Main</dd></div>
-            <div class="stat"><dt>खाता संख्या</dt><dd class="num">524001010060627</dd></div>
-            <div class="stat"><dt>IFSC</dt><dd class="num">UBIN0552402</dd></div>
-            <div class="stat"><dt>प्रकार</dt><dd>Current account</dd></div>
-            <div class="stat"><dt>टिप्पणी</dt><dd>web</dd></div>
           </dl>
         </div>
         <p>भुगतान के बाद 80G रसीद के लिए UTR और PAN के साथ <a href="mailto:support@kashtnivaranbalajimandirfoundation.org?subject=Donation">support@kashtnivaranbalajimandirfoundation.org</a> पर लिखें।</p>
