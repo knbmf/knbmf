@@ -39,13 +39,13 @@ PAGES = {
     "donate.html": {
         "url": f"{BASE}/donate.html",
         "title": "दान करें | कष्ट निवारण बालाजी मंदिर फाउंडेशन UPI",
-        "desc": "UPI knbmfoundatio@ybl पर दान करें। प्राप्तकर्ता Kast Nivaran Balaji Mandir Foundation। अस्थायी 12A और 80G। टिप्पणी web1, web2…",
+        "desc": "UPI knbmfoundatio@ybl पर दान करें। प्राप्तकर्ता Kast Nivaran Balaji Mandir Foundation। अस्थायी 12A और 80G। टिप्पणी knbmf1, knbmf2…",
         "image": f"{BASE}/assets/og-donate.jpg",
     },
     "give.html": {
         "url": f"{BASE}/give.html",
         "title": "दान फ़ॉर्म | UPI क्यूआर बनाएँ | KNBMF काशीपुर",
-        "desc": "नाम, मोबाइल, ईमेल और राशि लिखें। UPI क्यूआर knbmfoundatio@ybl पर बनेगा। टिप्पणी Kast Nivaran Balaji Mandir Foundation web1।",
+        "desc": "नाम, मोबाइल, ईमेल और राशि लिखें। UPI क्यूआर knbmfoundatio@ybl पर बनेगा। टिप्पणी knbmf1, knbmf2…।",
         "image": f"{BASE}/assets/og-donate.jpg",
     },
     "transparency.html": {

@@ -2,8 +2,8 @@
   var VPA = "knbmfoundatio@ybl";
   var PAYEE = "Kast Nivaran Balaji Mandir Foundation";
   var MAIL = "support@kashtnivaranbalajimandirfoundation.org";
-  var SEQ_KEY = "knbmf-web-n-v4";
-  var LOG_KEY = "knbmf-web-log-v4";
+  var SEQ_KEY = "knbmf-note-n-v5";
+  var LOG_KEY = "knbmf-web-log-v5";
 
   var form = document.getElementById("give-form");
   var result = document.getElementById("give-result");
@@ -28,17 +28,11 @@
     } catch (e) {
       n = 0;
     }
-    if (n < 1) {
-      var buf = new Uint16Array(1);
-      if (window.crypto && crypto.getRandomValues) crypto.getRandomValues(buf);
-      else buf[0] = Math.floor(Math.random() * 65000);
-      n = 1000 + (buf[0] % 8000);
-    }
     n += 1;
     try {
       localStorage.setItem(SEQ_KEY, String(n));
     } catch (e) {}
-    return "Kast Nivaran Balaji Mandir Foundation web" + n;
+    return "knbmf" + n;
   }
 
   function remember(entry) {
