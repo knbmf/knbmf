@@ -4,7 +4,7 @@
   var SHARE_TEXT =
     "काशीपुर की धारा 8 संस्था — कष्ट निवारण बालाजी मंदिर फाउंडेशन। मंगलवार निःशुल्क क्लिनिक चल रहा है। आगे मंदिर निर्माण, चैरिटेबल अस्पताल, विद्यालय, गौशाला, वृद्धाश्रम। दान: " +
     GIVE +
-    "  UPI knbmfoundatio@ybl  अस्थायी 80G।";
+    "  UPI 74076501@ubin  अस्थायी 80G।";
 
   var btn = document.querySelector(".menu-btn");
   var nav = document.querySelector(".nav");

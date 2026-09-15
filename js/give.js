@@ -1,5 +1,5 @@
 (function () {
-  var VPA = "knbmfoundatio@ybl";
+  var VPA = "74076501@ubin";
   var PAYEE = "Kast Nivaran Balaji Mandir Foundation";
   var MAIL = "support@kashtnivaranbalajimandirfoundation.org";
   var LOG_KEY = "knbmf-web-log-v6";

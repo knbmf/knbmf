@@ -39,13 +39,13 @@ PAGES = {
     "donate.html": {
         "url": f"{BASE}/donate.html",
         "title": "दान करें | कष्ट निवारण बालाजी मंदिर फाउंडेशन UPI",
-        "desc": "UPI knbmfoundatio@ybl पर दान करें। प्राप्तकर्ता Kast Nivaran Balaji Mandir Foundation। अस्थायी 12A और 80G।",
+        "desc": "UPI 74076501@ubin पर दान करें। प्राप्तकर्ता Kast Nivaran Balaji Mandir Foundation। अस्थायी 12A और 80G।",
         "image": f"{BASE}/assets/og-donate.jpg",
     },
     "give.html": {
         "url": f"{BASE}/give.html",
         "title": "दान फ़ॉर्म | UPI क्यूआर बनाएँ | KNBMF काशीपुर",
-        "desc": "नाम, मोबाइल, ईमेल और राशि लिखें। UPI क्यूआर knbmfoundatio@ybl पर बनेगा।",
+        "desc": "नाम, मोबाइल, ईमेल और राशि लिखें। UPI क्यूआर 74076501@ubin पर बनेगा।",
         "image": f"{BASE}/assets/og-donate.jpg",
     },
     "transparency.html": {
@@ -61,18 +61,18 @@ PAGES = {
     "faq.html": {
         "url": f"{BASE}/faq.html",
         "title": "दान प्रश्न | 80G UPI काशीपुर धारा 8 संस्था",
-        "desc": "कष्ट निवारण बालाजी मंदिर फाउंडेशन को UPI knbmfoundatio@ybl पर दान कैसे करें, 80G रसीद, CIN, क्लिनिक और परिसर। काशीपुर उत्तराखंड।",
+        "desc": "कष्ट निवारण बालाजी मंदिर फाउंडेशन को UPI 74076501@ubin पर दान कैसे करें, 80G रसीद, CIN, क्लिनिक और परिसर। काशीपुर उत्तराखंड।",
     },
     "share.html": {
         "url": f"{BASE}/share.html",
         "title": "साझा करें | KNBMF दान अभियान WhatsApp Facebook",
-        "desc": "कष्ट निवारण बालाजी मंदिर फाउंडेशन का दान लिंक WhatsApp, Facebook, Telegram पर भेजें। तैयार संदेश, 80G, UPI knbmfoundatio@ybl, काशीपुर।",
+        "desc": "कष्ट निवारण बालाजी मंदिर फाउंडेशन का दान लिंक WhatsApp, Facebook, Telegram पर भेजें। तैयार संदेश, 80G, UPI 74076501@ubin, काशीपुर।",
         "image": f"{BASE}/assets/og-donate.jpg",
     },
     "en.html": {
         "url": f"{BASE}/en.html",
         "title": "Donate | Kast Nivaran Balaji Mandir Foundation Kashipur",
-        "desc": "Section 8 NGO in Kashipur, Uttarakhand. Donate via UPI knbmfoundatio@ybl. Tuesday free clinic. Projected Balaji temple, hospital, school, gaushala. Provisional 80G. CIN U88900UT2025NPL019252.",
+        "desc": "Section 8 NGO in Kashipur, Uttarakhand. Donate via UPI 74076501@ubin. Tuesday free clinic. Projected Balaji temple, hospital, school, gaushala. Provisional 80G. CIN U88900UT2025NPL019252.",
         "type": "website",
         "lang": "en",
         "image": f"{BASE}/assets/og-donate.jpg",
@@ -120,7 +120,7 @@ ORG_LD = {
     "@type": ["NGO", "Organization"],
     "name": ORG,
     "alternateName": ["KNBMF", "कष्ट निवारण बालाजी मंदिर फाउंडेशन"],
-    "description": "Section 8 company in Kashipur, Uttarakhand. Tuesday free Dhanvantari clinic; campus for Balaji temple construction, charitable hospital, school, gaushala, old-age home, orphanage and animal kennel. Donate via UPI knbmfoundatio@ybl.",
+    "description": "Section 8 company in Kashipur, Uttarakhand. Tuesday free Dhanvantari clinic; campus for Balaji temple construction, charitable hospital, school, gaushala, old-age home, orphanage and animal kennel. Donate via UPI 74076501@ubin.",
     "url": f"{BASE}/",
     "logo": f"{BASE}/assets/logo-mark.png",
     "image": OG,
@@ -165,11 +165,11 @@ ORG_LD = {
 FAQ_ITEMS = [
     (
         "काशीपुर में इस संस्था को दान कैसे करें?",
-        "give.html पर नाम, मोबाइल, ईमेल और राशि लिखें। PhonePe या Google Pay से स्कैन करें। UPI आईडी knbmfoundatio@ybl।",
+        "give.html पर नाम, मोबाइल, ईमेल और राशि लिखें। PhonePe या Google Pay से स्कैन करें। UPI आईडी 74076501@ubin।",
     ),
     (
         "UPI आईडी क्या है? व्यक्तिगत खाता तो नहीं?",
-        "दान आईडी knbmfoundatio@ybl है। CIN U88900UT2025NPL019252, PAN AALCK8805B।",
+        "दान आईडी 74076501@ubin है। CIN U88900UT2025NPL019252, PAN AALCK8805B।",
     ),
     (
         "80G की रसीद मिलेगी क्या?",

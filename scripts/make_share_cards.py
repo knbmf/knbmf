@@ -79,7 +79,7 @@ def card_square():
         y += 48
     d.rounded_rectangle((90, 760, w - 90, 860), 18, fill=MAROON)
     d.text((120, 782), "Donate now   |   give.html", font=font(40), fill=WHITE)
-    d.text((90, 890), "UPI  knbmfoundatio@ybl", font=font(32), fill=MAROON)
+    d.text((90, 890), "UPI  74076501@ubin", font=font(32), fill=MAROON)
     d.text(
         (90, 940),
         "kashtnivaranbalajimandirfoundation.org/give.html",
@@ -120,7 +120,7 @@ def card_story():
         y += 58
     d.rounded_rectangle((90, 1220, w - 90, 1380), 24, fill=MAROON)
     d.text((130, 1255), "अभी दान करें", font=font(52, True), fill=WHITE)
-    d.text((130, 1320), "give.html  |  knbmfoundatio@ybl", font=font(30), fill=GOLD)
+    d.text((130, 1320), "give.html  |  74076501@ubin", font=font(30), fill=GOLD)
     d.text((90, 1460), "kashtnivaranbalajimandirfoundation.org", font=font(28), fill=MUTED)
     d.text((90, 1520), "CIN U88900UT2025NPL019252", font=font(26), fill=MUTED)
     d.text((90, 1570), "अस्थायी 12A और 80G", font=font(26), fill=MUTED)
@@ -142,7 +142,7 @@ def card_og():
     d.text((56, 270), "कल परिसर बने।", font=font(64, True), fill=MAROON_DEEP)
     d.text(
         (56, 370),
-        "UPI knbmfoundatio@ybl  |  मंगलवार निःशुल्क क्लिनिक  |  अस्थायी 80G",
+        "UPI 74076501@ubin  |  मंगलवार निःशुल्क क्लिनिक  |  अस्थायी 80G",
         font=font(26),
         fill=INK,
     )
