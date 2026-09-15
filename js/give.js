@@ -38,7 +38,7 @@
     try {
       localStorage.setItem(SEQ_KEY, String(n));
     } catch (e) {}
-    return "web" + n;
+    return "Kast Nivaran Balaji Mandir Foundation web" + n;
   }
 
   function remember(entry) {
