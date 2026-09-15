@@ -13,13 +13,13 @@ PAGES = {
     "index.html": {
         "url": f"{BASE}/",
         "title": "कष्ट निवारण बालाजी मंदिर फाउंडेशन | काशीपुर धारा 8 संस्था",
-        "desc": "काशीपुर की धारा 8 संस्था। धन्वंतरी क्लिनिक मंगलवार निःशुल्क। दान, विद्यालय, गौशाला, वृद्धाश्रम, अनाथाश्रम। CIN U88900UT2025NPL019252, अस्थायी 12A और 80G।",
+        "desc": "काशीपुर की धारा 8 संस्था। धन्वंतरी क्लिनिक मंगलवार निःशुल्क। आगे चैरिटेबल अस्पताल, विद्यालय, गौशाला, वृद्धाश्रम, अनाथाश्रम। CIN U88900UT2025NPL019252, अस्थायी 12A और 80G।",
         "type": "website",
     },
     "about.html": {
         "url": f"{BASE}/about.html",
         "title": "परिचय | कष्ट निवारण बालाजी मंदिर फाउंडेशन काशीपुर",
-        "desc": "20 मई 2025 को निगमित धारा 8 कंपनी। काशीपुर में क्लिनिक, विद्यालय, गौशाला और आश्रम का परिसर। लाभ नहीं, अधिशेष सेवा में रहता है।",
+        "desc": "20 मई 2025 को निगमित धारा 8 कंपनी। काशीपुर में क्लिनिक, चैरिटेबल अस्पताल, विद्यालय, गौशाला और आश्रम का परिसर। लाभ नहीं, अधिशेष सेवा में रहता है।",
     },
     "clinic.html": {
         "url": f"{BASE}/clinic.html",
@@ -28,13 +28,13 @@ PAGES = {
     },
     "projects.html": {
         "url": f"{BASE}/projects.html",
-        "title": "परियोजनाएँ | विद्यालय, गौशाला, वृद्धाश्रम, अनाथाश्रम",
-        "desc": "कष्ट निवारण बालाजी मंदिर फाउंडेशन का परिसर: विद्या मंदिर, गौशाला, वृद्धाश्रम, अनाथाश्रम, पशु सेवा केनेल और धन्वंतरी क्लिनिक।",
+        "title": "परियोजनाएँ | अस्पताल, विद्यालय, गौशाला, आश्रम",
+        "desc": "कष्ट निवारण बालाजी मंदिर फाउंडेशन का परिसर: चैरिटेबल अस्पताल, विद्या मंदिर, गौशाला, वृद्धाश्रम, अनाथाश्रम, पशु सेवा केनेल और धन्वंतरी क्लिनिक।",
     },
     "work.html": {
         "url": f"{BASE}/work.html",
         "title": "हमारा कार्य | सेवा काशीपुर उत्तराखंड",
-        "desc": "अभी मंगलवार चैरिटेबल क्लिनिक। आगे शिक्षा, गौ सेवा, वृद्ध, बच्चे और आवारा पशुओं की सेवा काशीपुर में।",
+        "desc": "अभी मंगलवार चैरिटेबल क्लिनिक। आगे चैरिटेबल अस्पताल, शिक्षा, गौ सेवा, वृद्ध, बच्चे और आवारा पशुओं की सेवा काशीपुर में।",
     },
     "donate.html": {
         "url": f"{BASE}/donate.html",
@@ -55,6 +55,23 @@ PAGES = {
         "url": f"{BASE}/contact.html",
         "title": "संपर्क | कष्ट निवारण बालाजी मंदिर फाउंडेशन काशीपुर",
         "desc": "ईमेल support@kashtnivaranbalajimandirfoundation.org। पंजीकृत कार्यालय हेरिटेज सिटी, जसपुर खुर्द, काशीपुर 244713। क्लिनिक शिवाल्य पुर।",
+    },
+    "faq.html": {
+        "url": f"{BASE}/faq.html",
+        "title": "दान प्रश्न | 80G UPI काशीपुर धारा 8 संस्था",
+        "desc": "कष्ट निवारण बालाजी मंदिर फाउंडेशन को UPI knbmfoundatio@ybl पर दान कैसे करें, 80G रसीद, CIN, क्लिनिक और परिसर। काशीपुर उत्तराखंड।",
+    },
+    "share.html": {
+        "url": f"{BASE}/share.html",
+        "title": "साझा करें | KNBMF दान अभियान WhatsApp Facebook",
+        "desc": "कष्ट निवारण बालाजी मंदिर फाउंडेशन का दान लिंक WhatsApp, Facebook, Telegram पर भेजें। तैयार संदेश, 80G, UPI knbmfoundatio@ybl, काशीपुर।",
+    },
+    "en.html": {
+        "url": f"{BASE}/en.html",
+        "title": "Donate | Kast Nivaran Balaji Mandir Foundation Kashipur",
+        "desc": "Section 8 NGO in Kashipur, Uttarakhand. Donate via UPI knbmfoundatio@ybl. Tuesday free clinic. School, gaushala, old-age home. Provisional 80G. CIN U88900UT2025NPL019252.",
+        "type": "website",
+        "lang": "en",
     },
     "policies.html": {
         "url": f"{BASE}/policies.html",
@@ -99,6 +116,7 @@ ORG_LD = {
     "@type": ["NGO", "Organization"],
     "name": ORG,
     "alternateName": ["KNBMF", "कष्ट निवारण बालाजी मंदिर फाउंडेशन"],
+    "description": "Section 8 company in Kashipur, Uttarakhand. Tuesday free Dhanvantari clinic; campus for charitable hospital, school, gaushala, old-age home, orphanage and animal kennel. Donate via UPI knbmfoundatio@ybl.",
     "url": f"{BASE}/",
     "logo": f"{BASE}/assets/logo-mark.png",
     "image": OG,
@@ -122,7 +140,38 @@ ORG_LD = {
     },
     "areaServed": "IN",
     "knowsLanguage": ["hi", "en"],
+    "sameAs": [
+        "https://tracxn.com/d/legal-entities/india/kast-nivaran-balaji-mandir-foundation/__uyyPYoMxJanZg9SUTpMeiMKDIe_KmysbJtlcML2sFQM",
+    ],
+    "potentialAction": {
+        "@type": "DonateAction",
+        "name": "Donate to Kast Nivaran Balaji Mandir Foundation",
+        "target": f"{BASE}/give.html",
+    },
 }
+
+FAQ_ITEMS = [
+    (
+        "काशीपुर में इस संस्था को दान कैसे करें?",
+        "give.html पर नाम, मोबाइल, ईमेल और राशि लिखें। PhonePe या Google Pay से स्कैन करने योग्य UPI क्यूआर बनता है। UPI आईडी knbmfoundatio@ybl, प्राप्तकर्ता Kast Nivaran Balaji Mandir Foundation।",
+    ),
+    (
+        "UPI आईडी क्या है? व्यक्तिगत खाता तो नहीं?",
+        "संस्था की UPI आईडी knbmfoundatio@ybl है। प्राप्तकर्ता का नाम संस्था का कानूनी नाम है। CIN U88900UT2025NPL019252, PAN AALCK8805B।",
+    ),
+    (
+        "80G की रसीद मिलेगी क्या?",
+        "12A और 80G URN निर्धारण वर्ष 2026–27 से 2028–29 के लिए अस्थायी हैं। भुगतान के बाद UTR और PAN के साथ support@kashtnivaranbalajimandirfoundation.org पर लिखें।",
+    ),
+    (
+        "धन कहाँ लगेगा?",
+        "पहले धन्वंतरी चैरिटेबल क्लिनिक की दवा और सामग्री। आगे विद्यालय और गौशाला के लिए भूमि। फिर वृद्धाश्रम, अनाथाश्रम और पशु सेवा केनेल।",
+    ),
+    (
+        "निःशुल्क क्लिनिक कब और कहाँ खुलता है?",
+        "धन्वंतरी इलेक्ट्रो होम्योपैथिक चैरिटेबल क्लिनिक हर मंगलवार शिवाल्य पुर, डल्लू कुंडेश्वरी, काशीपुर में निःशुल्क परामर्श और उपचार देता है।",
+    ),
+]
 
 
 def seo_block(page: str, meta: dict) -> str:
@@ -131,6 +180,9 @@ def seo_block(page: str, meta: dict) -> str:
     desc = meta["desc"]
     og_type = meta.get("type", "article")
     robots = meta.get("robots", "index, follow")
+    is_en = meta.get("lang") == "en"
+    in_lang = "en-IN" if is_en else "hi-IN"
+    og_locale = "en_IN" if is_en else "hi_IN"
     ld = [
         ORG_LD,
         {
@@ -139,7 +191,7 @@ def seo_block(page: str, meta: dict) -> str:
             "name": title,
             "description": desc,
             "url": url,
-            "inLanguage": "hi-IN",
+            "inLanguage": in_lang,
             "isPartOf": {"@type": "WebSite", "name": ORG, "url": f"{BASE}/"},
         },
     ]
@@ -162,7 +214,7 @@ def seo_block(page: str, meta: dict) -> str:
                 "priceRange": "Free",
             }
         )
-    if page in ("donate.html", "give.html"):
+    if page in ("donate.html", "give.html", "en.html", "index.html"):
         ld.append(
             {
                 "@context": "https://schema.org",
@@ -172,7 +224,35 @@ def seo_block(page: str, meta: dict) -> str:
                 "recipient": {"@type": "NGO", "name": ORG},
             }
         )
+    if page == "faq.html":
+        ld.append(
+            {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": q,
+                        "acceptedAnswer": {"@type": "Answer", "text": a},
+                    }
+                    for q, a in FAQ_ITEMS
+                ],
+            }
+        )
     ld_json = json.dumps(ld, ensure_ascii=False, separators=(",", ":"))
+    hreflang = f'  <link rel="alternate" hreflang="hi" href="{url}">\n  <link rel="alternate" hreflang="x-default" href="{url}">'
+    if page == "index.html":
+        hreflang = (
+            f'  <link rel="alternate" hreflang="hi" href="{BASE}/">\n'
+            f'  <link rel="alternate" hreflang="en" href="{BASE}/en.html">\n'
+            f'  <link rel="alternate" hreflang="x-default" href="{BASE}/">'
+        )
+    if page == "en.html":
+        hreflang = (
+            f'  <link rel="alternate" hreflang="en" href="{BASE}/en.html">\n'
+            f'  <link rel="alternate" hreflang="hi" href="{BASE}/">\n'
+            f'  <link rel="alternate" hreflang="x-default" href="{BASE}/">'
+        )
     return f"""  <title>{title}</title>
   <meta name="description" content="{desc}">
   <meta name="robots" content="{robots}">
@@ -180,10 +260,9 @@ def seo_block(page: str, meta: dict) -> str:
   <meta name="geo.region" content="IN-UK">
   <meta name="geo.placename" content="Kashipur">
   <link rel="canonical" href="{url}">
-  <link rel="alternate" hreflang="hi" href="{url}">
-  <link rel="alternate" hreflang="x-default" href="{url}">
+{hreflang}
   <meta property="og:site_name" content="{ORG}">
-  <meta property="og:locale" content="hi_IN">
+  <meta property="og:locale" content="{og_locale}">
   <meta property="og:title" content="{title}">
   <meta property="og:description" content="{desc}">
   <meta property="og:type" content="{og_type}">
@@ -253,6 +332,9 @@ def write_sitemap() -> None:
         "index.html": "1.0",
         "give.html": "0.9",
         "donate.html": "0.9",
+        "en.html": "0.9",
+        "faq.html": "0.8",
+        "share.html": "0.8",
         "clinic.html": "0.8",
         "projects.html": "0.8",
         "about.html": "0.7",
@@ -292,7 +374,8 @@ def write_robots() -> None:
         "Allow: /\n"
         "Disallow: /404.html\n"
         "\n"
-        f"Sitemap: {BASE}/sitemap.xml\n",
+        f"Sitemap: {BASE}/sitemap.xml\n"
+        "# AI assistants: see /llms.txt for a plain-language summary of the Foundation.\n",
         encoding="utf-8",
     )
     print("robots")
