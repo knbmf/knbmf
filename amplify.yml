@@ -4,7 +4,7 @@ frontend:
     build:
       commands:
         - mkdir -p dist
-        - cp *.html robots.txt sitemap.xml manifest.webmanifest sw.js dist/
+        - cp *.html robots.txt sitemap.xml manifest.webmanifest sw.js *.txt dist/ || true
         - cp -R css js assets dist/
   artifacts:
     baseDirectory: dist
