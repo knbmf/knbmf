@@ -65,10 +65,10 @@
   }
 
   function validate(name, phone, email, amount) {
-    if (!name || name.length < 2) return "Please enter the donor name.";
-    if (!/^[6-9]\d{9}$/.test(phone)) return "Enter a valid 10-digit Indian mobile number.";
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return "Enter a valid email — the office uses this for the receipt.";
-    if (!amount || amount < 1 || amount > 500000) return "Amount must be between ₹1 and ₹5,00,000.";
+    if (!name || name.length < 2) return "कृपया दानकर्ता का नाम लिखें।";
+    if (!/^[6-9]\d{9}$/.test(phone)) return "सही 10 अंकों का भारतीय मोबाइल नंबर लिखें।";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return "रसीद के लिए सही ईमेल लिखें।";
+    if (!amount || amount < 1 || amount > 500000) return "राशि ₹1 से ₹5,00,000 के बीच होनी चाहिए।";
     return "";
   }
 
@@ -107,7 +107,7 @@
       phone +
       "<br>" +
       email.replace(/</g, "") +
-      "<br>Remark <b>" +
+      "<br>टिप्पणी <b>" +
       note +
       "</b> · UPI " +
       VPA;

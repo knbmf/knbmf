@@ -1,5 +1,5 @@
 /* KNBMF web app — cache the public pages for install/offline. */
-var CACHE = "knbmf-v2";
+var CACHE = "knbmf-v3";
 var PRECACHE = [
   "/",
   "/index.html",

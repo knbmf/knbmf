@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,28 +14,28 @@
   <meta name="apple-mobile-web-app-title" content="KNBMF">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-  <div class="legal-bar">Section 8 Company <span>·</span> CIN U88900UT2025NPL019252 <span>·</span> 12A URN AALCK8805BE20251 <span>·</span> 80G URN AALCK8805BF20261</div>
+  <a class="skip" href="#main">सामग्री पर जाएँ</a>
+  <div class="legal-bar">धारा 8 कंपनी <span>·</span> CIN U88900UT2025NPL019252 <span>·</span> 12A URN AALCK8805BE20251 <span>·</span> 80G URN AALCK8805BF20261</div>
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="index.html">
         <img src="assets/logo-mark.png" alt="">
         <span class="brand-text"><strong>Kast Nivaran Balaji Mandir</strong><small>Foundation</small></span>
       </a>
-      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">मेनू</button>
       <nav class="nav" id="nav">
-        <a href="about.html">About</a>
-        <a href="clinic.html">Clinic</a>
-        <a href="projects.html">Projects</a>
-        <a href="work.html">Our Work</a>
-        <a href="give.html">Donate</a>
-        <a href="transparency.html">Transparency</a>
-        <a href="contact.html">Contact</a>
-        <a href="policies.html">Policies</a>
+        <a href="about.html">परिचय</a>
+        <a href="clinic.html">क्लिनिक</a>
+        <a href="projects.html">परियोजनाएँ</a>
+        <a href="work.html">हमारा कार्य</a>
+        <a href="give.html">दान</a>
+        <a href="transparency.html">पारदर्शिता</a>
+        <a href="contact.html">संपर्क</a>
+        <a href="policies.html">नीतियाँ</a>
       </nav>
     </div>
   </header>
@@ -43,59 +43,59 @@
     <div class="page-hero">
       <div class="wrap">
         <p class="eyebrow">दान · UPI QR</p>
-        <h1>Enter your details. A QR is generated for that amount.</h1>
-        <p>Pay from PhonePe, Google Pay or any UPI app. Each donation remark is <strong>Kast Nivaran Balaji Mandir Foundation web1</strong>, <strong>web2</strong>, <strong>web3</strong> and so on. After you pay, email the office if you need an 80G receipt.</p>
+        <h1>अपना विवरण लिखें। उस राशि का क्यूआर बनेगा।</h1>
+        <p>PhonePe, Google Pay या किसी भी UPI ऐप से भुगतान करें। प्रत्येक दान की टिप्पणी <strong>Kast Nivaran Balaji Mandir Foundation web1</strong>, <strong>web2</strong>, <strong>web3</strong> होगी। 80G रसीद के लिए भुगतान के बाद कार्यालय को ईमेल करें।</p>
       </div>
     </div>
     <section>
       <div class="wrap">
         <p id="give-error" class="form-error" hidden></p>
         <form id="give-form" class="give-panel" action="give.html" method="get">
-          <label for="name">Your name</label>
+          <label for="name">आपका नाम</label>
           <input id="name" name="name" required maxlength="120" autocomplete="name">
           <div class="form-row">
             <div>
-              <label for="phone">Mobile number</label>
-              <input id="phone" name="phone" required inputmode="numeric" maxlength="10" pattern="[6-9][0-9]{9}" placeholder="10-digit" autocomplete="tel">
+              <label for="phone">मोबाइल नंबर</label>
+              <input id="phone" name="phone" required inputmode="numeric" maxlength="10" pattern="[6-9][0-9]{9}" placeholder="10 अंक" autocomplete="tel">
             </div>
             <div>
-              <label for="email">Email for receipt</label>
+              <label for="email">रसीद का ईमेल</label>
               <input id="email" name="email" type="email" required autocomplete="email">
             </div>
           </div>
-          <label for="amount">Amount (₹)</label>
-          <input id="amount" name="amount" required inputmode="numeric" min="1" max="500000" placeholder="e.g. 501">
-          <button class="btn btn-gold" type="submit">Generate QR</button>
+          <label for="amount">राशि (₹)</label>
+          <input id="amount" name="amount" required inputmode="numeric" min="1" max="500000" placeholder="जैसे 501">
+          <button class="btn btn-gold" type="submit">क्यूआर बनाएँ</button>
         </form>
         <div id="give-result" class="give-result give-panel" hidden>
-          <p class="meta">Scan with PhonePe, Google Pay or any UPI app. Do not change the amount.</p>
+          <p class="meta">PhonePe, Google Pay या किसी भी UPI ऐप से स्कैन करें। राशि न बदलें।</p>
           <p id="give-amount" class="give-amount"></p>
           <div id="give-qr" class="give-qr"></div>
           <p id="give-summary"></p>
-          <p>Payee Kast Nivaran Balaji Mandir Foundation · UPI <span class="num">knbmfoundatio@ybl</span> · remark <b id="give-note">web…</b>. Do not change the remark in the app.</p>
+          <p>प्राप्तकर्ता Kast Nivaran Balaji Mandir Foundation · UPI <span class="num">knbmfoundatio@ybl</span> · टिप्पणी <b id="give-note">web…</b>। ऐप में टिप्पणी न बदलें।</p>
           <div class="give-actions">
-            <a class="btn btn-gold" id="give-upi" href="#">Open UPI app</a>
-            <a class="btn btn-ghost" id="give-mail" href="mailto:support@kashtnivaranbalajimandirfoundation.org">Email office for 80G</a>
-            <button class="btn" type="button" id="give-again">New donation</button>
+            <a class="btn btn-gold" id="give-upi" href="#">UPI ऐप खोलें</a>
+            <a class="btn btn-ghost" id="give-mail" href="mailto:support@kashtnivaranbalajimandirfoundation.org">80G के लिए ईमेल</a>
+            <button class="btn" type="button" id="give-again">नया दान</button>
           </div>
         </div>
-        <p class="note">12A and 80G are provisional for AY 2026–27 to 2028–29. Prefer a bank transfer? See the <a href="donate.html">account details</a>.</p>
+        <p class="note">12A और 80G निर्धारण वर्ष 2026–27 से 2028–29 के लिए अस्थायी हैं। क्यूआर देखें: <a href="donate.html">दान पृष्ठ</a>।</p>
       </div>
     </section>
   </main>
   <footer class="site-footer">
     <div class="wrap">
       <div class="footer-grid">
-        <div><h2>Foundation</h2><p>Section 8 company. Surplus stays in the objects.</p></div>
-        <div><h2>IDs</h2><ul><li>PAN AALCK8805B</li><li>Provisional 12A &amp; 80G</li></ul></div>
-        <div><h2>Write</h2><ul><li><a href="mailto:support@kashtnivaranbalajimandirfoundation.org">support@kashtnivaranbalajimandirfoundation.org</a></li></ul></div>
+        <div><h2>संस्था</h2><p>धारा 8 कंपनी। अधिशेष उद्देश्यों में रहता है।</p></div>
+        <div><h2>पहचान</h2><ul><li>PAN AALCK8805B</li><li>अस्थायी 12A और 80G</li></ul></div>
+        <div><h2>पत्र</h2><ul><li><a href="mailto:support@kashtnivaranbalajimandirfoundation.org">support@kashtnivaranbalajimandirfoundation.org</a></li></ul></div>
       </div>
       <p class="footer-policies">
-        <a href="terms.html">Terms &amp; Conditions</a>
-        <a href="privacy_policy.html">Privacy Policy</a>
-        <a href="refund_policy.html">Refund Policy</a>
-        <a href="return_policy.html">Return Policy</a>
-        <a href="shipping_policy.html">Shipping Policy</a>
+        <a href="terms.html">नियम और शर्तें</a>
+        <a href="privacy_policy.html">गोपनीयता नीति</a>
+        <a href="refund_policy.html">धनवापसी नीति</a>
+        <a href="return_policy.html">वापसी नीति</a>
+        <a href="shipping_policy.html">शिपिंग नीति</a>
       </p>
       <p class="copyright">© <span id="y"></span> Kast Nivaran Balaji Mandir Foundation.</p>
     </div>

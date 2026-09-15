@@ -14,8 +14,8 @@
   --peach: #f0e0cc;
   --white: #fffcf7;
   --shadow: 0 18px 40px rgba(90, 36, 30, 0.08);
-  --serif: "Playfair Display", "Iowan Old Style", Georgia, serif;
-  --sans: "Source Sans 3", "Source Sans Pro", "Segoe UI", sans-serif;
+  --serif: "Tiro Devanagari Hindi", "Playfair Display", "Iowan Old Style", Georgia, serif;
+  --sans: "Noto Sans Devanagari", "Source Sans 3", "Source Sans Pro", "Segoe UI", sans-serif;
   --devanagari: "Tiro Devanagari Hindi", "Noto Serif Devanagari", serif;
   --wrap: 1120px;
 }
