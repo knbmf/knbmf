@@ -68,19 +68,7 @@
     });
   });
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    var name = (form.name.value || "").trim().replace(/\s+/g, " ");
-    var phone = (form.phone.value || "").replace(/\D/g, "").slice(-10);
-    var email = (form.email.value || "").trim().toLowerCase();
-    var amount = parseInt(String(form.amount.value || "").replace(/,/g, ""), 10);
-    var msg = validate(name, phone, email, amount);
-    if (msg) {
-      showError(msg);
-      return;
-    }
-    showError("");
-
+  function showQr(name, phone, email, amount) {
     var uri = upiUri(amount);
     qrBox.innerHTML = "";
     new QRCode(qrBox, {
@@ -156,6 +144,47 @@
     form.hidden = true;
     result.hidden = false;
     result.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var name = (form.name.value || "").trim().replace(/\s+/g, " ");
+    var phone = (form.phone.value || "").replace(/\D/g, "").slice(-10);
+    var email = (form.email.value || "").trim().toLowerCase();
+    var amount = parseInt(String(form.amount.value || "").replace(/,/g, ""), 10);
+    var msg = validate(name, phone, email, amount);
+    if (msg) {
+      showError(msg);
+      return;
+    }
+    showError("");
+
+    var api = (window.KNBMF_PAY_API || "").replace(/\/$/, "");
+    var submitBtn = form.querySelector('button[type="submit"]');
+    if (submitBtn) submitBtn.disabled = true;
+    fetch(api + "/api/uropay/order", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({ name: name, phone: phone, email: email, amount: amount }),
+    })
+      .then(function (res) {
+        return res.json().then(function (body) {
+          return { ok: res.ok, body: body };
+        });
+      })
+      .then(function (out) {
+        if (out.ok && out.body && out.body.openUrl) {
+          window.location.href = out.body.openUrl;
+          return;
+        }
+        showQr(name, phone, email, amount);
+      })
+      .catch(function () {
+        showQr(name, phone, email, amount);
+      })
+      .finally(function () {
+        if (submitBtn) submitBtn.disabled = false;
+      });
   });
 
   var again = document.getElementById("give-again");
