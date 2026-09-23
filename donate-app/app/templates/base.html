@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Donate{% endblock %} · Kast Nivaran Balaji Mandir Foundation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="legal">Section 8 · CIN {{ foundation.cin }} · PAN {{ foundation.pan }} · Union Bank A/c 524001010060627</div>
+  <header>
+    <div class="wrap">
+      <a class="brand" href="/">
+        <span>
+          <strong>Kast Nivaran Balaji Mandir</strong>
+          <small>Foundation · Donate</small>
+        </span>
+      </a>
+    </div>
+  </header>
+  <main>
+    <div class="wrap">
+      {% block body %}{% endblock %}
+    </div>
+  </main>
+  <footer>
+    <div class="wrap">Money is received on a UPI QR and credited to the Foundation current account at Union Bank of India, Kashipur Main. Personal staff names are not shown on this site.</div>
+  </footer>
+</body>
+</html>

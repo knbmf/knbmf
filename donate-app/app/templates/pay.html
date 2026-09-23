@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}Pay ₹{{ d.amount_rupees|inr }}{% endblock %}
+{% block body %}
+<p class="meta">Receipt will go to {{ d.email }}</p>
+{% if d.provider == "mswipe" %}
+<h1>Mswipe UAT · ₹{{ d.amount_rupees|inr }}</h1>
+<p class="lede">{{ words }}. This opens Mswipe’s demo checkout. It does not settle to the foundation account.</p>
+{% else %}
+<h1>Scan this QR for ₹{{ d.amount_rupees|inr }}</h1>
+<p class="lede">{{ words }}. Remark <b>{{ d.note or d.id }}</b>. Do not change the amount or the remark in your UPI app.</p>
+{% endif %}
+
+<div class="pay-grid">
+  <div class="qrbox">
+    {% if d.provider == "mswipe" and d.upi_uri %}
+    <p class="note">Demo customer 9400057752. Complete or cancel the payment on Mswipe, then come back to this page.</p>
+    <div class="apps">
+      <a href="{{ d.upi_uri }}">Open Mswipe test payment</a>
+    </div>
+    {% elif d.upi_uri %}
+    <img src="/qr/{{ d.id }}.png" alt="UPI QR for ₹{{ d.amount_rupees }}">
+    {% else %}
+    <p class="error">Live UPI QR is off. The ID inside the old QR was a placeholder (<code>set-upi-vpa@uboi</code>), so PhonePe/GPay show “technical error”. Create a real UPI ID on the Union Bank account, put it in <code>donate-app/.env</code> as <code>UPI_VPA</code>, then generate a new QR.</p>
+    {% endif %}
+    <p class="amount">₹{{ d.amount_rupees|inr }}</p>
+    {% if d.provider == "mswipe" %}
+    <p class="meta">Mswipe UAT. A successful test does not credit the Union Bank account.</p>
+    {% else %}
+    <p class="meta">Union Bank of India · A/c 524001010060627 · IFSC UBIN0552402</p>
+    {% endif %}
+    {% if payment_mode == "demo" and not d.upi_uri %}
+      <p class="note">Demo: this test marks paid in a few seconds so you can check admin and the receipt. It does not take real money.</p>
+    {% endif %}
+    {% if d.upi_uri and d.provider != "mswipe" %}
+    <div class="apps">
+      <a href="{{ d.upi_uri }}">Open UPI app</a>
+      <a href="tez://upi/pay?{{ d.upi_uri.split('?',1)[1] }}">GPay</a>
+      <a href="phonepe://pay?{{ d.upi_uri.split('?',1)[1] }}">PhonePe</a>
+      <a href="paytmmp://pay?{{ d.upi_uri.split('?',1)[1] }}">Paytm</a>
+    </div>
+    {% endif %}
+  </div>
+  <div class="card">
+    <p><b>{{ d.name }}</b><br>{{ d.phone }}<br>{{ d.email }}</p>
+    <p class="meta">This page waits for payment success, then emails the receipt and writes the row in the admin panel.</p>
+    <p id="status" class="meta">Waiting for payment…</p>
+  </div>
+</div>
+<script>
+(function poll() {
+  fetch("/api/donations/{{ d.id }}").then(r => r.json()).then(d => {
+    const el = document.getElementById("status");
+    if (d.status === "paid") {
+      el.textContent = "Payment received. Opening receipt…";
+      location.href = "/success/{{ d.id }}";
+    } else {
+      el.textContent = "Waiting for payment…";
+      setTimeout(poll, 2500);
+    }
+  }).catch(() => setTimeout(poll, 4000));
+})();
+</script>
+{% endblock %}

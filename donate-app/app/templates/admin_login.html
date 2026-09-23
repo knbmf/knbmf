@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Admin{% endblock %}
+{% block body %}
+<h1>Admin</h1>
+<div class="card" style="max-width:420px">
+  {% if error %}<div class="error">{{ error }}</div>{% endif %}
+  <form method="post" action="/admin/login">
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" required>
+    <button class="btn btn-gold" type="submit">Enter</button>
+  </form>
+</div>
+{% endblock %}

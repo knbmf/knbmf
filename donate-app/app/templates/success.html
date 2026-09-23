@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Donation received{% endblock %}
+{% block body %}
+<p class="meta">धन्यवाद</p>
+<h1>Payment received.</h1>
+<p class="lede">₹{{ d.amount_rupees|inr }} from {{ d.name }} is recorded. A system receipt has been generated{% if d.receipt_sent_at %} and sent to <b>{{ d.email }}</b>{% else %} for <b>{{ d.email }}</b>{% endif %}.</p>
+<div class="card">
+  <p><b>Receipt</b> {{ d.id }}<br>
+  <b>Time</b> {{ d.paid_at|ist }} IST<br>
+  <b>Mobile</b> {{ d.phone }}</p>
+  {% if d.receipt_error and d.receipt_error.startswith("saved:") %}
+    <p class="note">SMTP password is not set yet, so the email was stored in the server outbox. The PDF is still ready to download.</p>
+  {% elif d.receipt_error %}
+    <p class="error">Email issue: {{ d.receipt_error }}</p>
+  {% endif %}
+  <a class="btn btn-gold" href="/receipt/{{ d.id }}.pdf">Download receipt PDF</a>
+  <a class="btn btn-ghost" href="/give">Another donation</a>
+  <a class="btn btn-ghost" href="/">Website</a>
+</div>
+{% endblock %}

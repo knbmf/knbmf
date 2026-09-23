@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}Donations{% endblock %}
+{% block body %}
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+  <h1>Donations</h1>
+  <form method="post" action="/admin/logout"><button class="btn btn-ghost" type="submit">Log out</button></form>
+</div>
+<p class="lede">Name, mobile, amount, date and time. Newest first.</p>
+<div class="card" style="overflow:auto">
+  <table>
+    <thead>
+      <tr>
+        <th>Date &amp; time</th>
+        <th>Receipt</th>
+        <th>Remark</th>
+        <th>Name</th>
+        <th>Number</th>
+        <th>Amount</th>
+        <th>Status</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for d in rows %}
+      <tr>
+        <td>{{ (d.paid_at or d.created_at)|ist }}</td>
+        <td>{{ d.id }}</td>
+        <td><b>{{ d.note or "—" }}</b></td>
+        <td>{{ d.name }}<br><span class="meta">{{ d.email }}</span></td>
+        <td>{{ d.phone }}</td>
+        <td>₹{{ d.amount_rupees|inr }}</td>
+        <td>
+          <span class="pill {{ d.status }}">{{ d.status }}</span>
+          {% if d.receipt_sent_at %}<div class="ok">receipt mailed</div>{% endif %}
+        </td>
+        <td>
+          {% if d.status != "paid" %}
+          <form method="post" action="/admin/donations/{{ d.id }}/confirm">
+            <input name="utr" placeholder="UTR (optional)" style="min-width:120px">
+            <button class="btn btn-gold" type="submit">Mark paid</button>
+          </form>
+          {% else %}
+            <a href="/receipt/{{ d.id }}.pdf">PDF</a>
+          {% endif %}
+        </td>
+      </tr>
+      {% else %}
+      <tr><td colspan="8">No donations yet.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

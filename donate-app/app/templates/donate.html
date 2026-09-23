@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Donate{% endblock %}
+{% block body %}
+<p class="meta">दान · UPI QR</p>
+<h1>Enter an amount. A QR is generated for that rupee value.</h1>
+<p class="lede">Pay from any UPI app. The credit goes to <b>Kast Nivaran Balaji Mandir Foundation</b> at Union Bank of India, Kashipur Main (A/c 524001010060627, IFSC UBIN0552402). After a successful payment you receive a system receipt on the email you enter here.</p>
+
+<div class="card">
+  {% if error %}<div class="error">{{ error }}</div>{% endif %}
+  <p class="meta"><a href="/">← Full website</a></p>
+  <form method="post" action="/give">
+    <label for="name">Your name</label>
+    <input id="name" name="name" required maxlength="120" value="{{ form.name or '' }}" autocomplete="name">
+    <div class="row">
+      <div>
+        <label for="phone">Mobile number</label>
+        <input id="phone" name="phone" required inputmode="numeric" maxlength="10" pattern="[6-9][0-9]{9}" value="{{ form.phone or '' }}" placeholder="10-digit">
+      </div>
+      <div>
+        <label for="email">Email for receipt</label>
+        <input id="email" name="email" type="email" required value="{{ form.email or '' }}" autocomplete="email">
+      </div>
+    </div>
+    <label for="amount">Amount (₹)</label>
+    <input id="amount" name="amount" required inputmode="numeric" min="1" max="500000" value="{{ form.amount or '' }}" placeholder="e.g. 501">
+    <button class="btn btn-gold" type="submit">Generate QR</button>
+  </form>
+</div>
+<p class="note" style="margin-top:16px">12A and 80G are provisional for AY 2026–27 to 2028–29. Keep the receipt.</p>
+{% endblock %}

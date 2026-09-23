@@ -177,6 +177,11 @@
           window.location.href = out.body.openUrl;
           return;
         }
+        var detail = out.body && out.body.detail;
+        if (detail) {
+          showError(typeof detail === "string" ? detail : "Payment link could not be created.");
+          return;
+        }
         showQr(name, phone, email, amount);
       })
       .catch(function () {
