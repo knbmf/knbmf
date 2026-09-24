@@ -3,8 +3,8 @@
 {% block body %}
 <p class="meta">Receipt will go to {{ d.email }}</p>
 {% if d.provider == "mswipe" %}
-<h1>Mswipe UAT · ₹{{ d.amount_rupees|inr }}</h1>
-<p class="lede">{{ words }}. This opens Mswipe’s demo checkout. It does not settle to the foundation account.</p>
+<h1>Pay ₹{{ d.amount_rupees|inr }}</h1>
+<p class="lede">{{ words }}. This opens Mswipe checkout for Kast Nivaran Balaji Mandir Foundation.</p>
 {% else %}
 <h1>Scan this QR for ₹{{ d.amount_rupees|inr }}</h1>
 <p class="lede">{{ words }}. Remark <b>{{ d.note or d.id }}</b>. Do not change the amount or the remark in your UPI app.</p>
@@ -13,9 +13,9 @@
 <div class="pay-grid">
   <div class="qrbox">
     {% if d.provider == "mswipe" and d.upi_uri %}
-    <p class="note">Demo customer 9400057752. Complete or cancel the payment on Mswipe, then come back to this page.</p>
+    <p class="note">Complete the payment on Mswipe, then come back to this page.</p>
     <div class="apps">
-      <a href="{{ d.upi_uri }}">Open Mswipe test payment</a>
+      <a href="{{ d.upi_uri }}">Open Mswipe payment</a>
     </div>
     {% elif d.upi_uri %}
     <img src="/qr/{{ d.id }}.png" alt="UPI QR for ₹{{ d.amount_rupees }}">
@@ -24,7 +24,7 @@
     {% endif %}
     <p class="amount">₹{{ d.amount_rupees|inr }}</p>
     {% if d.provider == "mswipe" %}
-    <p class="meta">Mswipe UAT. A successful test does not credit the Union Bank account.</p>
+    <p class="meta">Mswipe settles to Union Bank of India · A/c 524001010060627 · IFSC UBIN0552402</p>
     {% else %}
     <p class="meta">Union Bank of India · A/c 524001010060627 · IFSC UBIN0552402</p>
     {% endif %}

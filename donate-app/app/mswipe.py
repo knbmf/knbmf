@@ -1,4 +1,4 @@
-"""Mswipe Pay by Link, UAT by default.
+"""Mswipe Pay by Link. Live host by default.
 
 Token and link calls follow docs.mswipe.com Getting Started:
   POST {base}/CreatePBLAuthToken
@@ -43,13 +43,13 @@ def _post(path: str, body: dict) -> dict:
     try:
         response = httpx.post(url, json=body, timeout=30)
     except httpx.HTTPError as exc:
-        raise MswipeError(f"Mswipe UAT did not respond ({exc.__class__.__name__}).") from exc
+        raise MswipeError(f"Mswipe did not respond ({exc.__class__.__name__}).") from exc
     try:
         data = response.json()
     except ValueError as exc:
-        raise MswipeError(f"Mswipe UAT returned a non-JSON response ({response.status_code}).") from exc
+        raise MswipeError(f"Mswipe returned a non-JSON response ({response.status_code}).") from exc
     if not isinstance(data, dict):
-        raise MswipeError("Mswipe UAT returned an unexpected response.")
+        raise MswipeError("Mswipe returned an unexpected response.")
     return data
 
 
@@ -69,7 +69,7 @@ def _auth_token() -> str:
     data = _post("CreatePBLAuthToken", body)
     if str(data.get("status")).lower() != "true" or not data.get("token"):
         message = str(data.get("msg") or data.get("responsemessage") or "token request failed")
-        raise MswipeError(f"Mswipe UAT login failed: {message}")
+        raise MswipeError(f"Mswipe login failed: {message}")
     _token = str(data["token"])
     _token_until = now + 20 * 60
     return _token
@@ -77,7 +77,7 @@ def _auth_token() -> str:
 
 def create_payment_link(*, donation_id: str, amount_rupees: int, email: str, phone: str, name: str) -> dict:
     if not configured():
-        raise MswipeError("Mswipe UAT keys are not set.")
+        raise MswipeError("Mswipe live keys are not set.")
     global _token, _token_until
     _token = ""
     _token_until = 0.0
@@ -122,7 +122,7 @@ def create_payment_link(*, donation_id: str, amount_rupees: int, email: str, pho
         if "token" in message.lower() or "authorized" in message.lower():
             _token = ""
             _token_until = 0.0
-        raise MswipeError(f"Mswipe UAT link failed: {message}")
+        raise MswipeError(f"Mswipe link failed: {message}")
     trans_id = (parse_qs(urlparse(link).query).get("TransID") or [""])[0]
     log.info("mswipe link created invoice=%s txn=%s", donation_id, data.get("txn_id"))
     return {"url": link, "trans_id": trans_id, "txn_id": str(data.get("txn_id") or "")}
@@ -133,7 +133,7 @@ def transaction_status(trans_id: str) -> dict:
         return {}
     data = _post(
         "getPBLTransactionDetails",
-        {"id": trans_id, "Latitude": "", "Longitude": "", "IP_Address": "", "User_Agent": "KNBMF-UAT"},
+        {"id": trans_id, "Latitude": "", "Longitude": "", "IP_Address": "", "User_Agent": "KNBMF"},
     )
     rows = data.get("Data") or []
     if not rows or not isinstance(rows, list):

@@ -59,8 +59,8 @@ UROPAY_API_KEY = os.getenv("UROPAY_API_KEY", "").strip()
 UROPAY_API_SECRET = os.getenv("UROPAY_API_SECRET", "").strip()
 UROPAY_API_BASE = os.getenv("UROPAY_API_BASE", "https://api.uropai.in").strip()
 
-# Mswipe Pay by Link. Defaults are the UAT host from docs.mswipe.com.
-MSWIPE_BASE = os.getenv("MSWIPE_BASE", "https://dcuat.mswipetech.co.in/ipg/api").rstrip("/")
+# Mswipe Pay by Link. Default host is live.
+MSWIPE_BASE = os.getenv("MSWIPE_BASE", "https://pbl.mswipe.com/ipg/api").rstrip("/")
 MSWIPE_USER_ID = os.getenv("MSWIPE_USER_ID", "").strip()
 MSWIPE_CLIENT_ID = os.getenv("MSWIPE_CLIENT_ID", "").strip()
 MSWIPE_PASSWORD = os.getenv("MSWIPE_PASSWORD", "").strip()
