@@ -11,11 +11,12 @@ from fastapi.responses import FileResponse, HTMLResponse, JSONResponse, Redirect
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from sqlalchemy import select
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, object_session
 from starlette.middleware.sessions import SessionMiddleware
 
 from .config import (
     ADMIN_PASSWORD,
+    ADMIN_USER,
     DATA_DIR,
     FOUNDATION,
     PAYMENT_MODE,
@@ -116,6 +117,14 @@ def require_admin(request: Request) -> None:
         raise HTTPException(status_code=303, headers={"Location": "/admin/login"})
 
 
+def _secret_match(given: str, expected: str) -> bool:
+    given_b = given.encode()
+    expected_b = expected.encode()
+    if not expected_b or len(given_b) != len(expected_b):
+        return False
+    return secrets.compare_digest(given_b, expected_b)
+
+
 @app.get("/", response_class=HTMLResponse)
 def website_home():
     return FileResponse(SITE_ROOT / "index.html")
@@ -190,6 +199,10 @@ def create_donation(
     try:
         attach_qr(donation)
     except (ValueError, uropay.UroPayError, mswipe.MswipeError) as exc:
+        donation.status = "failed"
+        donation.receipt_error = str(exc)[:500]
+        db.add(donation)
+        db.commit()
         return templates.TemplateResponse(
             "donate.html",
             {"request": request, "error": str(exc), "form": {"name": name, "phone": phone, "email": email, "amount": amount}},
@@ -243,7 +256,14 @@ def _new_pending_donation(db: Session, name: str, phone: str, email: str, rupees
         note=next_web_note(db),
         status="pending",
     )
-    attach_qr(donation)
+    try:
+        attach_qr(donation)
+    except (ValueError, uropay.UroPayError, mswipe.MswipeError) as exc:
+        donation.status = "failed"
+        donation.receipt_error = str(exc)[:500]
+        db.add(donation)
+        db.commit()
+        raise
     db.add(donation)
     db.commit()
     db.refresh(donation)
@@ -329,12 +349,19 @@ def _refresh_mswipe(donation: Donation) -> Donation:
         row = mswipe.transaction_status(donation.provider_ref)
     except mswipe.MswipeError:
         return donation
-    paid = str(row.get("Payment_Status")) == "1" or str(row.get("Payment_Desc") or "").lower() == "approved"
+    desc = str(row.get("Payment_Desc") or "")
+    paid = str(row.get("Payment_Status")) == "1" or desc.lower() == "approved"
     if paid:
         utr = str(row.get("Payment_Id") or row.get("IPG_ID") or "")
         updated = mark_paid(donation.id, utr=utr)
         if updated is not None:
             return updated
+    if str(row.get("Payment_Status")) == "0":
+        donation.status = "failed"
+        donation.receipt_error = (desc or "Payment was not completed")[:500]
+        bound = object_session(donation)
+        if bound is not None:
+            bound.commit()
     return donation
 
 
@@ -406,11 +433,13 @@ def admin_login_form(request: Request):
 
 
 @app.post("/admin/login")
-def admin_login(request: Request, password: str = Form(...)):
-    if password != ADMIN_PASSWORD:
+def admin_login(request: Request, email: str = Form(...), password: str = Form(...)):
+    ok_user = _secret_match(email.strip().lower(), ADMIN_USER)
+    ok_pass = _secret_match(password, ADMIN_PASSWORD)
+    if not (ok_user and ok_pass):
         return templates.TemplateResponse(
             "admin_login.html",
-            {"request": request, "error": "Wrong password."},
+            {"request": request, "error": "Wrong email or password."},
             status_code=401,
         )
     request.session["admin"] = True
@@ -427,7 +456,17 @@ def admin_logout(request: Request):
 def admin_home(request: Request, db: Session = Depends(get_db)):
     require_admin(request)
     rows = db.scalars(select(Donation).order_by(Donation.created_at.desc())).all()
-    return templates.TemplateResponse("admin.html", {"request": request, "rows": rows})
+    for row in rows:
+        if row.status == "pending" and row.provider == "mswipe" and row.provider_ref:
+            _refresh_mswipe(row)
+    rows = db.scalars(select(Donation).order_by(Donation.created_at.desc())).all()
+    counts = {"paid": 0, "failed": 0, "pending": 0}
+    for row in rows:
+        counts[row.status] = counts.get(row.status, 0) + 1
+    return templates.TemplateResponse(
+        "admin.html",
+        {"request": request, "rows": rows, "counts": counts},
+    )
 
 
 @app.post("/admin/donations/{donation_id}/confirm")

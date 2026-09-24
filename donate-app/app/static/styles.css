@@ -81,6 +81,7 @@ th { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: v
 .pill { display: inline-block; border-radius: 999px; padding: 2px 8px; font-size: 12px; font-weight: 600; }
 .paid { background: #dceee3; }
 .pending { background: #f0e0cc; }
+.failed { background: #f6d5d5; }
 .ok { color: #2c6b3c; font-weight: 600; }
 footer { background: #5a241e; color: #f3e6c8; padding: 20px 0; font-size: 13px; }
 footer a { color: #f3e6c8; }

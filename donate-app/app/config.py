@@ -13,7 +13,8 @@ DATA_DIR.mkdir(exist_ok=True)
 (DATA_DIR / "outbox").mkdir(exist_ok=True)
 
 SECRET_KEY = os.getenv("SECRET_KEY", "dev-only-change-me")
-ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "admin")
+ADMIN_USER = os.getenv("ADMIN_USER", "admin@knbmf.com").strip().lower()
+ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "")
 PAYMENT_MODE = os.getenv("PAYMENT_MODE", "demo").strip().lower()
 
 UPI_VPA = os.getenv("UPI_VPA", "").strip()
