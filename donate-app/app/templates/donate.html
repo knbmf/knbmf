@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block title %}Donate{% endblock %}
 {% block body %}
-<p class="meta">दान · UPI QR</p>
-<h1>Enter an amount. A QR is generated for that rupee value.</h1>
-<p class="lede">Pay from any UPI app. The credit goes to <b>Kast Nivaran Balaji Mandir Foundation</b> at Union Bank of India, Kashipur Main (A/c 524001010060627, IFSC UBIN0552402). After a successful payment you receive a system receipt on the email you enter here.</p>
+<p class="meta">दान · Mswipe</p>
+<h1>Donate to the Foundation</h1>
+<p class="lede">Enter your details and the amount. The next page is Mswipe checkout, where you can pay by UPI, card, or net banking. The payment is for <b>Kast Nivaran Balaji Mandir Foundation</b> and settles to Union Bank of India, Kashipur Main (A/c 524001010060627, IFSC UBIN0552402). A receipt is emailed after a successful payment.</p>
 
 <div class="card">
   {% if error %}<div class="error">{{ error }}</div>{% endif %}
@@ -23,7 +23,7 @@
     </div>
     <label for="amount">Amount (₹)</label>
     <input id="amount" name="amount" required inputmode="numeric" min="1" max="500000" value="{{ form.amount or '' }}" placeholder="e.g. 501">
-    <button class="btn btn-gold" type="submit">Generate QR</button>
+    <button class="btn btn-gold" type="submit">Continue to Mswipe</button>
   </form>
 </div>
 <p class="note" style="margin-top:16px">12A and 80G are provisional for AY 2026–27 to 2028–29. Keep the receipt.</p>

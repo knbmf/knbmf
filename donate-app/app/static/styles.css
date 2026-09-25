@@ -32,6 +32,9 @@ header {
   border-bottom: 1px solid var(--line);
   padding: 14px 0;
 }
+header .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.nav { display: flex; gap: 18px; align-items: center; }
+.nav a { color: var(--maroon); font-weight: 700; text-decoration: none; }
 .brand { display: flex; gap: 12px; align-items: center; text-decoration: none; color: inherit; }
 .brand strong { font-family: var(--serif); font-size: 18px; display: block; }
 .brand small { letter-spacing: .18em; text-transform: uppercase; color: #c4a04a; font-size: 10px; }
@@ -55,7 +58,8 @@ input {
   font: inherit;
   background: #fff;
 }
-.row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.row, .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+a.card { display: block; color: inherit; text-decoration: none; }
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
   border: 0; border-radius: 999px; padding: 12px 22px; font: inherit; font-weight: 600;

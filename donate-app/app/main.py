@@ -140,6 +140,11 @@ def website_page(page: str):
     return FileResponse(path)
 
 
+@app.get("/app", response_class=HTMLResponse)
+def app_home(request: Request):
+    return templates.TemplateResponse("app_home.html", {"request": request})
+
+
 @app.get("/give", response_class=HTMLResponse)
 def give_form(request: Request):
     return templates.TemplateResponse(
